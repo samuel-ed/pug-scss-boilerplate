@@ -1,0 +1,11 @@
+.tabs{}
+.tab{}
+.tab-link{}
+.tabs-panel{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+// Custom tabs

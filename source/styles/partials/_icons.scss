@@ -1,0 +1,91 @@
+/* =Icons
+----------------------------------------------- */
+
+// By SVG FILE
+
+@mixin svgIcon($name, $width, $height, $isBlock : false, $png: false){
+  $url : $iconsPath + $name + ".svg";
+  @if ($png){
+    $url : $iconsPath + $name + ".png";
+  } 
+  @if($isBlock == true){
+    display: block;
+  }
+  background-image: url($url);
+  width: $width + px;
+  height: $height + px;
+}
+
+[class*="icon-"]{
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon{
+  &--left{
+    margin-right: .6em;
+  }
+  &--right{
+    margin-left: .6em;
+  }
+}
+
+$icons: (
+	facebook: ( width  : 38, height : 38 ),
+  twitter: ( width  : 38, height : 38 ),
+  burger: ( width  : 15, height : 14 ),
+  close: ( width  : 32, height : 32 ),
+  down: ( width  : 11, height : 11 ),
+  up: ( width  : 11, height : 11 ),
+  back: ( width  : 16, height : 16 ),
+  flag: ( width  : 16, height : 16 ),
+  lock: ( width  : 16, height : 16 ),
+  wallet: ( width  : 20, height : 20 ),
+);
+
+@each $iconName, $icon in $icons {
+  .icon{
+    &-#{$iconName}{
+      @include svgIcon($iconName, map-get($icon, width), map-get($icon, height));
+    }
+  }
+}
+
+
+.no-svg{
+  @each $iconName, $icon in $icons {
+    .icon{
+      &-#{$iconName}{
+        @include svgIcon($iconName, map-get($icon, width), map-get($icon, height), true);
+      }
+    }
+  }
+}
+
+// By Fonts
+
+@mixin getIcon($icon){
+  content: $icon;
+  font-family: "gobcl" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="ic-"],
+[class*=" ic-"]{
+  display: inline-block;
+  vertical-align: middle;
+  &:before{
+    display: block;
+  }
+}
+

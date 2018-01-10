@@ -1,0 +1,272 @@
+/* ===========================
+	 Tools/Helpers
+	 =========================== */
+
+.elem-bg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.img-to-bg{
+	display: none !important;
+}
+
+.img-responsive{
+	@include imgResponsive();
+}
+.img-adaptive{
+		@include imgAdaptive();
+}
+.img-adaptive-overflowed{
+	@include imgAdaptive();	
+	@include mq($from: tablet ) {
+		max-width: none;
+	}
+}
+
+//
+@each $bpName, $bp in $bootstrapBreakpoints {
+	.overflowed-#{$bpName} {
+		@if( $bpName == xs ){
+			@include mq($until: 768px ) {
+				margin-left: -15px !important;
+				margin-right: -15px !important;
+			}
+		}
+		@else{
+			@include mq($from: $bp ) {
+				margin-left: -15px !important;
+				margin-right: -15px !important;
+			}
+		}
+	}
+}
+
+.pull{
+	&-sm-right{
+		@include mq($from: tablet ) {
+			float: right;
+		}
+	}
+	&-md-right{
+		@include mq($from: desktop ) {
+			float: right;
+		}
+	}
+	&-lg-right{
+		@include mq($from: wide ) {
+			float: right;
+		}
+	}
+}
+
+.block-center{
+	// @include breakpoint($md) {
+	@media (min-height: 768px){
+		display: table;
+		height: 100%;
+		width: 100%;
+		& &_content{
+				display: table-cell;
+				vertical-align: middle;
+		}
+	}
+}
+.block-bottom{
+	display: table;
+	height: 100%;
+	width: 100%;
+	& &_content{
+			display: table-cell;
+			vertical-align: bottom;
+	}
+}
+
+.noborder{
+	border: 0 !important;
+	&-bottom{
+		border-bottom: 0 !important;
+	}
+	&-left{
+		border-left: 0 !important;
+	}
+	&-right{
+		border-right: 0 !important;
+	}
+	&-top{
+		border-top: 0 !important;
+	}
+}
+.nopadding{
+	padding: 0 !important;
+	&-bottom{
+		padding-bottom: 0 !important;
+	}
+	&-left{
+		padding-left: 0 !important;
+	}
+	&-right{
+		padding-right: 0 !important;
+	}
+	&-top{
+		padding-top: 0 !important;
+	}
+}
+.nomargin{
+	margin: 0 !important;
+	&-bottom{
+		margin-bottom: 0 !important;
+	}
+	&-left{
+		margin-left: 0 !important;
+	}
+	&-right{
+		margin-right: 0 !important;
+	}
+	&-top{
+		margin-top: 0 !important;
+	}
+}
+
+/* 
+ * height Full
+ */
+.height-full{
+	height: 100%;
+}
+
+/* 
+ * Video Responsive
+ */
+
+.video-wrapper {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+}
+.video-wrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+}
+
+/*
+ * Element center
+ */
+
+.elem-center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*
+ * Image replacement
+ */
+
+.ir {
+		background-color: transparent;
+		border: 0;
+		overflow: hidden;
+		/* IE 6/7 fallback */
+		*text-indent: -9999px;
+}
+
+.ir:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+		// display: none !important;
+		// visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+		visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+}
+
+.clearfix:after {
+		clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+		*zoom: 1;
+}
+
+
+/* =Layout
+------------------- */
+
+
+/* =Fonts
+------------------- */
+
+

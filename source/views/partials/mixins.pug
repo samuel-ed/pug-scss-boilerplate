@@ -1,0 +1,22 @@
+//- Font Awsome ICON MIXIN
+mixin fa-icon(name)
+	i(class=`fa fa-${name}` aria-hidden="true")
+
+//- CARDTAB MIXIN
+mixin cardTab(imgPath, name, icon, active, href="#")
+	.card-tab
+		.card-tab_figure
+			img.card-tab_image(src=imgPath height="126")
+		.card-tab_content
+			h3.card-tab_title= name
+			a(class=`card-tab_link ${active ? 'active':''}` href=href)
+				i(class=`fa fa-${icon}` aria-hidden="true")
+
+
+mixin budget-box(title, url="#" , dark=false, inline=false) 
+	.budget-box(class=`${dark ? 'budget-box--dark':''} ${inline? 'budget-box--inline':'' }`)
+		a(href=url download).budget-box_link
+		.budget-box_title=title
+		span.budget-box_download
+			+fa-icon("download")
+			span Descargar

@@ -1,0 +1,24 @@
+{
+  "name": "AppName",
+  "authors": [
+    "Samuel Ed <corvus.samuel@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "modular-scale": "^3.0.2",
+    "sass-mq": "^3.3.2",
+    "bootstrap-sass": "boostrap-sass#^3.3.7"
+  }
+}

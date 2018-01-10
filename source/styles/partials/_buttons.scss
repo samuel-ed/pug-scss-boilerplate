@@ -1,0 +1,25 @@
+.button{
+  // background-color: getColor('white');
+  // color: getColor('graydark');
+  font-size: ms(-1);
+  font-weight: 700;
+  display: inline-block;
+  margin: ms(1) 0;
+  padding: 9px 26px;
+  height: 38px;
+  &--rounded{
+    border-radius: 20px;
+  }
+  @include pressButton();
+}
+.link{
+  // color: getColor("bluelight");
+  display: inline-block;
+  font-size: ms(-1);
+  font-weight: 700;
+  white-space: normal;
+  text-decoration: none;
+  &--underlined{
+    text-decoration: underline;
+  }
+}

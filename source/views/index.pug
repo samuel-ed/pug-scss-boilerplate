@@ -1,0 +1,36 @@
+extends partials/docwrapper
+block langPage
+	meta(name="language", content="es")
+block titlePage 
+	| #{projectName}
+block cssPage
+	//- link(rel='stylesheet', href='css/page.css')
+	style.
+		body{
+			color : #636b6f;
+			font-weight : 200;
+		}
+		.appname{
+			height: 400px;
+			padding: 120px 0;
+		}
+		.appname h1{
+			color : #636b6f;
+			font-weight : 200;
+			font-size: 48px;
+		}
+block body
+	body
+		include partials/header
+
+		main.site-main
+			.container.text-center
+				.appname
+					h1 #{projectName}
+
+				
+
+		include partials/footer
+	include partials/scripts
+		//- script(src="js/page.js" type="text/javascript")
+

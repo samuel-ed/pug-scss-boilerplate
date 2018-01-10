@@ -1,0 +1,163 @@
+@mixin font($fontName, $fontWeight, $size){
+	$font-family: $fontWeight;
+	// @each $fontKey, $font in $fonts{
+	// 	@if $fontKey == $fontWeight {
+	// 		$font-family: $font;
+	// 	}
+	// }
+	font-family: $fontName , Arial,"Helvetica Neue",Helvetica,sans-serif;
+	font-weight: $fontWeight;
+	@if $size != false{
+		font-size: $size;
+	}
+}
+
+@mixin expand($bgcolor, $dir:left){
+	position: relative;
+	&:before{
+		background-color: $bgcolor;
+		content: "";
+		display: block;
+		height: 100%;
+		width: 500%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -100%;
+		right: -100%;
+		@include mq($from: tablet ) {
+			@if($dir == left){
+				left: initial;
+				right: 100%;
+			}
+			@if($dir == right){
+				right: initial;
+				left: 100%;
+			}
+		}
+	}
+}
+@mixin margin($size, $dir:null){
+	@if($dir == null){
+		margin: $size + px;
+	}
+	@if($dir != null){
+		margin-#{$dir}: $size + px;
+	}
+}
+
+@mixin circle($diameter:10px, $bgc:transparent){
+	background-color: $bgc;
+	border-radius: 50%;
+	display: block;
+	height: $diameter; 
+	width: $diameter;
+}
+
+@mixin centerChild($tagChild){
+	position: relative;
+	#{$tagChild} {
+		@include center();
+		@content;
+	}
+}
+
+@mixin centerBlock() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin center($type:default){
+	position: absolute;
+	@if $type == v {
+		top: 50%;
+		transform: translateY(-50%);
+	} @else if $type == h {
+		left: 50%;
+		transform: translateX(-50%);
+	} @else {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@mixin imgAdaptive(){
+	display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@mixin imgResponsive(){
+	display: block;
+  height: auto;
+  width: 100%;
+}
+
+@mixin pressButton($scale : .98){
+	transition:.2s;
+	&:active{
+		transform: scale($scale);
+	}
+}
+
+@mixin ellipsis ($max-width){
+  display: inline-block;
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin placeholder($color : $clr-mixin-placeholder) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+
+@mixin sprite(){
+	background-image: url('../img/icons.png');
+	background-repeat: no-repeat;
+	background-size: 320px;
+}
+@mixin clearSelect(){
+	appearance : none;
+	border:0;
+	background-color: transparent;
+}
+
+@mixin resetUl() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clearfix ($haslayout : true) {
+	zoom: 1;
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both
+	}
+}
+
+@mixin inlineBlock($val) {
+	display: inline-block;
+	vertical-align: $val;
+}
+
+@mixin opacity($opacity) {
+	filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+	opacity: $opacity;
+}
+

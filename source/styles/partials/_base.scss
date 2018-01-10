@@ -1,0 +1,47 @@
+@import 'normalize';
+
+/* =Base
+----------------------------------------------- */
+*, *:after, *:before{
+	box-sizing: border-box;
+	
+}
+body {
+	color: colorText(secondary);
+	font-family: $lato;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 400;
+	overflow-x: hidden;
+	/* WP */
+	&.admin-bar{
+		.site-header{
+			&_fixed{
+				margin-top: 32px;
+			}
+		}
+		.mfp-wrap,
+		.site-nav{
+			margin-top: 32px;
+		}
+	}
+/* End WP */
+}
+a{
+	color: #457EC0;
+}
+b,
+strong {
+  font-weight: bold;
+}
+figure{
+	margin: 0;
+}
+blockquote{
+	margin: 0;
+}
+hr{
+	background-color: #D8D8D8;
+	border: 0;
+	height: 1px;
+}

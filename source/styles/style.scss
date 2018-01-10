@@ -1,0 +1,38 @@
+/*
+Theme Name: App
+Theme URI: https://app.com
+Author: Samuel Ed
+Author URI: https://linkedin.com/in/samuel-ed
+*/
+
+@import 
+  'partials/mixins',
+  'partials/settings',
+  
+  "partials/google-fonts",
+  'partials/icon-fonts',
+  'partials/libraries',
+  "partials/colors",
+  // 'partials/fonts',
+
+  'partials/base',
+  'partials/typography',
+  'partials/icons',
+  'partials/helpers',
+
+  'partials/table-grid',
+  
+
+  // LAYOUT
+  'partials/header',
+  'partials/navigation',
+  'partials/footer',
+  
+  
+  // 'partials/tabs',
+  // 'partials/collapsible',
+  'partials/buttons'
+  // 'partials/form',
+  // 'partials/tooltip',
+  // 'partials/sections'
+  ;

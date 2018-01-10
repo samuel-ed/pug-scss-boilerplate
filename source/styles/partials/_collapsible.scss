@@ -1,0 +1,81 @@
+.collapsible{
+	&-overflowed{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	&_main-title{
+		color: getColor(black);
+		font-size: ms(4);
+		font-weight: 300;
+		margin: 0 0 22px;
+	}
+	&_item{
+		border-bottom: 1px solid getColor(lightgray);
+		// margin: 0 0 19px;
+		&.active{
+			.collapsible{
+				&_header{
+					background-color: getColor(light);
+					border-bottom-color: getColor(lightgray);		
+					color: getColor(black);
+					user-select: none;
+					&:after{
+						transform: rotate(-180deg);
+					}
+				}
+				&_body{
+					// border-color: getColor("blue");
+					// box-shadow:  inset 0px 0px 0px 2px getColor(dark);
+					// display: block;
+				}
+			}
+		}
+	}
+	&_header{
+		background-color: getColor(light);
+		border-bottom: 1px solid transparent;		
+		color: getColor(dark);
+		padding: 18px 13px;
+		padding-right: 67px;
+		position: relative;
+		cursor: pointer;
+		transition: all .35s;
+		&:after{
+			content: "";
+			background-image: url($iconsPath + 'arrow-select.svg');
+			background-repeat: no-repeat;
+			margin-right: 13px;
+			// position: absolute;
+			height: 6px;
+			width: 9px;
+			@include center(v);
+			right: 0;
+			@include mq($from: tablet ) {
+				margin-right: 20px;
+			}
+		}
+	}
+	&_title{
+		color: inherit;
+		font-family: $roboto;
+		font-size: ms(0);
+		font-weight: 500;
+		line-height: 24px;
+		margin: 0;
+		text-decoration: underline;
+		user-select: none;
+	}
+	&_body{
+		// border: 2px solid transparent;
+		// background-color: getColor(gray21);
+		margin-top: -2px;
+		padding: 8px 11px;
+		display: none;
+		p{
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}    
+	}
+}
+

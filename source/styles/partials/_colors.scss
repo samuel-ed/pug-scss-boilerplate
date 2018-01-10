@@ -1,0 +1,23 @@
+/* =Colors
+----------------------------------------------- */
+
+// color classes
+@each $colorName, $color in $colors {
+	.text-#{$colorName} {
+		color: $color !important;
+	}
+
+	.bg-#{$colorName} {
+		background-color: $color !important;
+		&.expand-left{
+			@include expand($color, left);
+		}
+		&.expand-right{
+			@include expand($color, right);
+		}
+	}
+
+	.border-#{$colorName} {
+		border-color: $color !important;
+	}
+}

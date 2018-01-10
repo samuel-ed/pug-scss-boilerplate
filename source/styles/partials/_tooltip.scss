@@ -1,0 +1,107 @@
+.tooltip{
+	border: 1px solid #979797;
+	border-radius: 3px;
+	background-color: getColor(white);
+	color: #979797;
+	position: absolute;
+	width: 205px;
+	padding: 8px;
+	opacity: 0;
+	z-index: 10;
+	transition: .2s;
+	&:before{
+		background: transparent url($iconsPath + "tooltip-shape.svg") center center no-repeat;
+		background-size: contain;
+		content: "";
+		width: 14px;
+		height: 13px;
+		// border-style: solid;
+		// border-color: #fff transparent transparent transparent;;
+		position: absolute;
+	}
+	&.top{
+		bottom: 100%;
+		@include center(h);
+		margin-bottom: 15px;
+		&:before{
+			// border-width: 13px 11.5px 0 11.5px;
+			// 12px 7.5px 0 7.5px;
+			top: 100%;
+			@include center(h);
+			// transform: rotate(-180deg);
+			margin-top: -1px;	
+		}
+	}
+	&.bottom{
+		top: 100%;
+		margin-top: 10px;
+		@include center(h);
+		&:before{
+			border-width: 0 11.5px 13px 11.5px;
+			border-color: transparent transparent #fff transparent;
+			bottom: 100%;
+			@include center(h);
+		}
+	}
+	&.left{
+		border-width: 11.5px 13px 11.5px 0;
+		margin-left: 18px;
+		top: 0;
+		right: 100%;
+		@include center(v);
+		&:before{
+			
+		}
+	}
+	&.right{
+		top: 0;
+		left: 100%;
+		@include center(v);
+		&:before{
+			right: 100%;
+			@include center(v);
+		}
+	}
+	&.dark{
+		background-color: getColor(black);
+		border:0;
+		&.bottom{
+			&:before{
+				border-color: transparent transparent getColor(black) transparent;				
+			}
+		}
+	}
+	p{
+		color: getColor(black);
+		font-size: ms(-2);
+		margin: 0;
+	}
+	&_header{
+		position: relative;
+		padding-right: 20px;
+	}
+	&_close{
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0 ;
+	}
+	&_checkbox{
+		display: none;
+		&:checked{
+			+ .tooltip{
+				opacity: 1;
+			}
+		}
+	}
+}
+.tooltip-content{
+	// @include tooltip();
+	position: relative;
+	&:hover{
+		z-index: 2 !important;
+		.tooltip{
+			opacity: 1;
+		}
+	}
+}
