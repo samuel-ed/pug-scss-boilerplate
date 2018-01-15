@@ -1,8 +1,4 @@
 /* COMMON STYLES */
-.center-block{
-	@include center-block()
-}
-
 .box-title{
 	background-color: getColor("white");
 	border-radius: 6px;
@@ -78,42 +74,6 @@
 					padding: 12px 5px;
 				}
 			}
-		}
-	}
-}
-
-
-.profile{
-	@include clearfix();
-	&_data{
-		margin:50px 0;
-		text-align: center;
-		@include mq($from: desktop ) {
-			text-align: left;
-		}
-	}
-	&_image{
-		@include center-block();
-		border-radius: 50%;
-		max-width: 166px;
-	}
-	p{
-		margin: 0;
-	}
-	&--small{
-		margin: 0 0 30px;
-		.profile{
-			&_image{
-				max-width: 132px;
-			}
-			&_data{
-				margin:25px 0 0;
-			}
-		}
-	}
-	&--dark{
-		&.profile{
-			color: getColor("white");
 		}
 	}
 }

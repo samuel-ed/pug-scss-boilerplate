@@ -10,6 +10,25 @@
 .img-to-bg{
 	display: none !important;
 }
+.background-image-expand{
+	@include mq($until: tablet ) {
+		min-height: 300px;
+	}
+	&_bg{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		position: absolute;
+		height: 100%;
+		// z-index: -1;
+		&--left{
+			right: 0;
+		}
+		&--right{
+			left: 0;
+		}
+	}
+}
 
 .img-responsive{
 	@include imgResponsive();
