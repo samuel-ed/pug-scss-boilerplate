@@ -1,0 +1,47 @@
+$sides: ( bottom, left, right, top );
+@mixin breakpointProperty($property) {
+	@each $side in $sides {
+		&-#{$side}{
+			#{$property}-#{$side}: 0 !important;
+		}
+	}
+	@each $bpName, $bp in $bootstrapBreakpoints {
+		@if( $bpName == xs ){
+			@each $side in $sides {
+				&-#{$bpName}-#{$side}{
+					@include mq($until: 768px ) {
+						#{$property}-#{$side}: 0 !important;
+					}
+				}
+			}
+		}
+		@else{
+			@each $side in $sides {
+				&-#{$bpName}-#{$side}{
+					@include mq($from: $bp ) {
+						#{$property}-#{$side}: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* No Border */
+.noborder{
+	border: 0 !important;
+	@include breakpointProperty( border );
+}
+
+/* No Padding */
+.nopadding{
+	padding: 0 !important;
+	@include breakpointProperty( padding );
+}
+
+/* No Margin */
+.nomargin{
+	margin: 0 !important;
+	@include breakpointProperty( margin );
+}
+

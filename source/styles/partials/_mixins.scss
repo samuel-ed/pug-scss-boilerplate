@@ -1,15 +1,29 @@
 @mixin font($fontName, $fontWeight, $size){
 	$font-family: $fontWeight;
-	// @each $fontKey, $font in $fonts{
-	// 	@if $fontKey == $fontWeight {
-	// 		$font-family: $font;
-	// 	}
-	// }
 	font-family: $fontName , Arial,"Helvetica Neue",Helvetica,sans-serif;
 	font-weight: $fontWeight;
 	@if $size != false{
 		font-size: $size;
 	}
+}
+
+@mixin elementTable($dir:top){
+	display: table;
+	// height: 100%;
+	width: 100%;
+	& &_content{
+		display: table-cell;
+		vertical-align: $dir;
+	}
+}
+
+@mixin setFullBlock(){
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
 }
 
 @mixin expand($bgcolor, $dir:left){
@@ -35,14 +49,6 @@
 				left: 100%;
 			}
 		}
-	}
-}
-@mixin margin($size, $dir:null){
-	@if($dir == null){
-		margin: $size + px;
-	}
-	@if($dir != null){
-		margin-#{$dir}: $size + px;
 	}
 }
 
@@ -122,12 +128,6 @@
 	}
 }
 
-
-@mixin sprite(){
-	background-image: url('../img/icons.png');
-	background-repeat: no-repeat;
-	background-size: 320px;
-}
 @mixin clearSelect(){
 	appearance : none;
 	border:0;

@@ -1,0 +1,12 @@
+.img-responsive{
+	@include imgResponsive();
+}
+.img-adaptive{
+		@include imgAdaptive();
+}
+.img-adaptive-overflowed{
+	@include imgAdaptive();	
+	@include mq($from: tablet ) {
+		max-width: none;
+	}
+}

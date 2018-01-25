@@ -1,0 +1,40 @@
+ul.disc {
+	padding-left: 25px;
+	list-style-type: disc;
+	li{
+		list-style-type: disc;
+	}
+}
+ul.circle {
+	padding-left: 25px;
+	list-style-type: circle;
+	li{
+		list-style-type: circle;
+	}
+}
+ul.square {
+	padding-left: 25px;
+	list-style-type: square;
+	li{
+		list-style-type: square;
+	}
+}
+ol.upper-roman {
+	padding-left: 25px;
+	list-style-type: upper-roman;
+	li{
+		list-style-type: upper-roman;
+	}
+}
+ol.lower-alpha {
+	padding-left: 25px;
+	list-style-type: lower-alpha;
+	li{
+		list-style-type: lower-alpha;
+	}
+}
+ul{
+	ul{
+		padding-left: 2em;
+	}
+}

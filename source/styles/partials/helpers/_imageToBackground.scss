@@ -1,0 +1,52 @@
+/* =Helpers - Image To Background
+ * Works with app.js 
+ * Function: App.imageToBackground();
+----------------------------------------------- */
+.imgToBg{
+	&_source{
+		display: none !important;
+	}
+	&_element{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		@for $i from 1 to $grid-columns {
+			&--#{$i}{
+				background-size: ($i*100%/$grid-columns);
+				background-position-x: left;
+			}
+		}
+		&--left{
+			background-position-x: left;
+		}
+		&--right{
+			background-position-x: right;
+		}
+	}
+	
+}
+
+.imgToBgExpand{
+	height: 100%;
+	@include mq($until: tablet ) {
+		min-height: 300px;
+	}
+	&_source{
+		display: none !important;
+	}
+	&_element{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		// z-index: -1;
+		&--left{
+			right: 0;
+		}
+		&--right{
+			left: 0;
+		}
+	}
+}

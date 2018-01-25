@@ -1,0 +1,35 @@
+.table{
+	margin: 30px 0;
+	overflow: hidden;
+	width: 100%;
+	&_content{
+		overflow-x: scroll;
+	}
+}
+
+table{
+	width: 100%;
+	thead{
+		text-align: left;
+		tr{
+			th{
+				// font-family: $wl;
+				font-size: 24px;
+				font-weight: lighter;
+				padding: 5px;
+			}
+		}
+	}
+	tbody{
+		tr{
+			// background-color: #69B2E1;
+			&:nth-child(even){
+				background-color: rgba(#000,.4);
+			}
+			td{
+				font-size: 14px;
+				padding: 12px 5px;
+			}
+		}
+	}
+}
