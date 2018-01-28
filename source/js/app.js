@@ -7,9 +7,11 @@ $(function() {
 
 App = {
 	init : function(){
-		this.imgToBackground();
-		this.carousel();
-		this.tabs();
+		this.imageToBackground();
+		this.imageToBackgroundExpand();
+		// this.carousel();
+		// this.tabs();
+		this.bannersCarusel();
 	},
 	menuTrigger: function(){
 		$('.menu-trigger').on('click', function(e){
@@ -17,11 +19,42 @@ App = {
 			$('body').toggleClass("menu-active");	
 		});
 	},
-	imgToBackground : function(){
-		$('.elem-bg').each(function(index, el) {
-			var srcImg = $(el).find('.img-to-bg').attr('src');
+	imageToBackground : function(){
+		$('.imgToBg_element').each(function(index, el) {
+			var srcImg = $(el).find('.imgToBg_source').attr('src');
 			$(el).css('background-image','url('+ srcImg +')');
 		});
+	},
+	imageToBackgroundExpand : function(){
+		var This = this;
+		$('.imgToBgExpand').each(function(index, el) {
+			var $bg = $(el).find('.imgToBgExpand_element'),
+					srcImg = String($(el).find('.imgToBgExpand_source').attr('src'));
+			$bg.css({"background-image": "url("+ srcImg +")"});
+			This.setElementWidth(el);
+			This.onResize(function(){
+				This.setElementWidth(el);
+			});
+		});
+	},
+	setElementWidth : function(el){
+		var $bg = $(el).find('.imgToBgExpand_element'),
+				container = $('.container').outerWidth(),
+				windowWidth = $(window).outerWidth(),
+				expand = windowWidth-container,
+				expandOneSide = expand/2,
+				width = $(el).outerWidth(),
+				widthBg = expand + width,
+				widthBgOneSide = expandOneSide + width;
+
+		$bg.css({'width': widthBgOneSide, 'margin-right':0, 'margin-left':0});
+		if($(window).outerWidth() < 992){
+			if($bg.hasClass('imgToBgExpand_element--left'))
+				// $bg.css({'margin-right': -expandOneSide, 'width': widthBg});
+				$bg.css({'margin-right': 0, 'width': widthBg});
+			if($bg.hasClass('imgToBgExpand_element--right'))
+				$bg.css({'margin-left': 0, 'width': widthBg});
+		}
 	},
 	onResize : function(callback){
 		$(window).on('resize', function(){
@@ -40,6 +73,36 @@ App = {
 							scrollTop: pos
 					}, 500);
 			});
+		});
+	},
+
+	//------------------
+	bannersCarusel : function () {
+		$('.banners').slick({
+			dots: true,
+		  infinite: true,
+		  speed: 300,
+		  slidesToShow: 3,
+			slidesToScroll: 3,
+		  responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						arrows: false,
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						arrows: false,
+					}
+				},
+			]
 		});
 	},
 	
