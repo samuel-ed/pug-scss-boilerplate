@@ -7,7 +7,7 @@
 	
 }
 body {
-	color: colorText(secondary);
+	color: getColor('primaryText');
 	font-family: $lato;
 	font-size: 16px;
 	line-height: 1.2;
