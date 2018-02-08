@@ -62,6 +62,7 @@ ul li  { font-size: ms(0); }
 	&-center { text-align: center !important; }
 	&-left { text-align: left !important; }
 	&-right { text-align: right !important; }
+	&-middle{ display: inline-block !important; vertical-align: middle !important; }
 	@each $bpName, $bp in $bootstrapBreakpoints {
 		@if( $bpName == xs ){
 			&-#{$bpName}-center{
