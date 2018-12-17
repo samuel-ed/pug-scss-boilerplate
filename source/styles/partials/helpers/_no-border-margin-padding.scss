@@ -1,24 +1,32 @@
-$sides: ( bottom, left, right, top );
+/* =No Border-Margin-Padding
+----------------------------------------------- */
+
+$sides: (bottom, left, right, top);
+
 @mixin breakpointProperty($property) {
+	
 	@each $side in $sides {
-		&-#{$side}{
+		&-#{$side} {
 			#{$property}-#{$side}: 0 !important;
 		}
 	}
+
 	@each $bpName, $bp in $bootstrapBreakpoints {
-		@if( $bpName == xs ){
+		@if($bpName == xs) {
 			@each $side in $sides {
-				&-#{$bpName}-#{$side}{
-					@include mq($until: 768px ) {
+				&-#{$bpName}-#{$side} {
+					@include mq($until: 768px) {
 						#{$property}-#{$side}: 0 !important;
 					}
 				}
 			}
 		}
-		@else{
+
+		@else {
 			@each $side in $sides {
-				&-#{$bpName}-#{$side}{
-					@include mq($from: $bp ) {
+				&-#{$bpName}-#{$side} {
+
+					@include mq($from: $bp) {
 						#{$property}-#{$side}: 0 !important;
 					}
 				}
@@ -28,20 +36,22 @@ $sides: ( bottom, left, right, top );
 }
 
 /* No Border */
-.noborder{
+.noborder {
 	border: 0 !important;
-	@include breakpointProperty( border );
+
+	@include breakpointProperty(border);
 }
 
 /* No Padding */
-.nopadding{
+.nopadding {
 	padding: 0 !important;
-	@include breakpointProperty( padding );
+
+	@include breakpointProperty(padding);
 }
 
 /* No Margin */
-.nomargin{
+.nomargin {
 	margin: 0 !important;
-	@include breakpointProperty( margin );
-}
 
+	@include breakpointProperty(margin);
+}

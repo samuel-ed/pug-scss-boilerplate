@@ -1,16 +1,21 @@
-.pull{
-	&-sm-right{
-		@include mq($from: tablet ) {
+/* =Pulls
+----------------------------------------------- */
+
+.pull {
+	&-sm-right {
+		@include mq($from: tablet) {
 			float: right;
 		}
 	}
-	&-md-right{
-		@include mq($from: desktop ) {
+
+	&-md-right {
+		@include mq($from: desktop) {
 			float: right;
 		}
 	}
-	&-lg-right{
-		@include mq($from: wide ) {
+
+	&-lg-right {
+		@include mq($from: wide) {
 			float: right;
 		}
 	}

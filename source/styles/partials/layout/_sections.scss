@@ -1,17 +1,20 @@
+/* =Sections
+----------------------------------------------- */
 
-/* Sections */
-
-.section{
+.section {
 	// overflow-x: hidden;
 	padding: 50px 0;
-	&--nopadding{
+
+	&--nopadding {
 		padding: 0;
 	}
-	&--medium{
+
+	&--medium {
 		padding: 25px 0;
 	}
-	&--large{
+
+	&--large {
 		padding: 70px 0;
 	}
-}
 
+}

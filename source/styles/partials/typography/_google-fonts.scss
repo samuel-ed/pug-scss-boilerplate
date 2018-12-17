@@ -1,19 +1,8 @@
 // Google Fonts Families
-$lato : 'Lato' ,sans-serif;
-$openSans : 'Open Sans' ,sans-serif;
+$lato: 'Lato', sans-serif;
+$openSans: 'Open Sans', sans-serif;
 
-$fonts:(
-	OpenSans : $openSans,
-	Lato : $lato
+$fonts: (
+	OpenSans: $openSans,
+	Lato: $lato
 );
-
-@function font($font) {
-	@if map-has-key($fonts, $font) {
-		$font: map-get($fonts, $font);
-	} @else {
-		@if type-of($font) != font {
-			@error "Font name: `#{$font}` not found."
-		}
-	}
-	@return $font;
-}

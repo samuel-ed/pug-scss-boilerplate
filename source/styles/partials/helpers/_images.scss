@@ -1,11 +1,11 @@
 .img-responsive{
-	@include imgResponsive();
+	@include img-responsive();
 }
 .img-fluid{
-		@include imgFluid();
+		@include img-fluid();
 }
 .img-fluid-overflowed{
-	@include imgFluid();	
+	@include img-fluid();	
 	@include mq($from: tablet ) {
 		max-width: none;
 	}

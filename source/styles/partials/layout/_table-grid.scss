@@ -1,28 +1,36 @@
+/* =Table Grid
+----------------------------------------------- */
+
 @each $bpName, $bp in $bootstrapBreakpoints {
-	.table-#{$bpName}-row{
-		@include mq($from: $bp ) {
+	.table-#{$bpName}-row {
+
+		@include mq($from: $bp) {
 			display: table;
 			table-layout: fixed;
 			width: 100%;
 		}
-		> [class*="col-#{$bpName}-"]{
-			@include mq($from: $bp ) {
+
+		> [class*="col-#{$bpName}-"] {
+			@include mq($from: $bp) {
 				display: table-cell;
 				float: none;
 				vertical-align: top;
 			}
-			&.top{
-				@include mq($from: $bp ) {
+
+			&.top {
+				@include mq($from: $bp) {
 					vertical-align: top;
 				}
 			}
-			&.bottom{
-				@include mq($from: $bp ) {
+
+			&.bottom {
+				@include mq($from: $bp) {
 					vertical-align: bottom;
 				}
 			}
-			&.middle{
-				@include mq($from: $bp ) {
+
+			&.middle {
+				@include mq($from: $bp) {
 					vertical-align: middle;
 				}
 			}
@@ -30,47 +38,54 @@
 	}
 }
 
-.table{
-	&-block{
+.table {
+	&-block {
 		display: table;
 		height: 100%;
 		width: 100%;
-		& &_content{
+
+		& &_content {
 			display: table-cell;
 		}
 	}
+
 	@each $bpName, $bp in $bootstrapBreakpoints {
 		&-#{$bpName}-block {
-			@if( $bpName == xs ){
-				@include mq($until: tablet ) {
+
+			@if($bpName == xs) {
+				@include mq($until: tablet) {
 					display: table;
 					height: 100%;
 					width: 100%;
-					.table-block_content{
+
+					.table-block_content {
 						display: table-cell;
 					}
 				}
 			}
-			@else{
-				@include mq($from: $bp ) {
+
+			@else {
+				@include mq($from: $bp) {
 					display: table;
 					height: 100%;
 					width: 100%;
-					.table-block_content{
+
+					.table-block_content {
 						display: table-cell;
 					}
 				}
 			}
 		}
-		
 	}
-	&-block--center{
-		.table-block_content{
+
+	&-block--center {
+		.table-block_content {
 			vertical-align: middle;
 		}
 	}
-	&-block--bottom{
-		.table-block_content{
+
+	&-block--bottom {
+		.table-block_content {
 			vertical-align: bottom;
 		}
 	}

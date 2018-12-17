@@ -19,13 +19,13 @@ $fonts: (
 
 @each $fontKey, $font in $fonts {
   @font-face {
-	font-family: $font;
-	src: url($fontsPath + $font +'.eot');
-	src: url($fontsPath + $font +'.eot?#iefix') format('embedded-opentype'),
-		 url($fontsPath + $font +'.woff') format('woff'),
-		 url($fontsPath + $font +'.ttf') format('truetype'),
-		 url($fontsPath + $font +'.svg#' + $font) format('svg');
-	font-weight: normal;
-	font-style: normal;
+		font-family: $font;
+		src: url($fontsPath + $font +'.eot');
+		src: url($fontsPath + $font +'.eot?#iefix') format('embedded-opentype'),
+				url($fontsPath + $font +'.woff') format('woff'),
+				url($fontsPath + $font +'.ttf') format('truetype'),
+				url($fontsPath + $font +'.svg#' + $font) format('svg');
+		font-weight: normal;
+		font-style: normal;
 	}
 }

@@ -1,7 +1,10 @@
-.tooltip{
+/* =Tooltips
+----------------------------------------------- */
+
+.tooltip {
 	border: 1px solid #979797;
 	border-radius: 3px;
-	background-color: getColor(white);
+	background-color: get-color(white);
 	color: #979797;
 	position: absolute;
 	width: 205px;
@@ -9,7 +12,8 @@
 	opacity: 0;
 	z-index: 10;
 	transition: .2s;
-	&:before{
+
+	&::before {
 		background: transparent url($iconsPath + "tooltip-shape.svg") center center no-repeat;
 		background-size: contain;
 		content: "";
@@ -19,88 +23,106 @@
 		// border-color: #fff transparent transparent transparent;;
 		position: absolute;
 	}
-	&.top{
+
+	&.top {
 		bottom: 100%;
-		@include center(h);
 		margin-bottom: 15px;
-		&:before{
-			// border-width: 13px 11.5px 0 11.5px;
-			// 12px 7.5px 0 7.5px;
+		@include center(h);
+		
+		&::before {
 			top: 100%;
+			margin-top: -1px;
+
 			@include center(h);
-			// transform: rotate(-180deg);
-			margin-top: -1px;	
 		}
 	}
-	&.bottom{
+
+	&.bottom {
 		top: 100%;
 		margin-top: 10px;
+
 		@include center(h);
-		&:before{
+
+		&::before {
 			border-width: 0 11.5px 13px 11.5px;
 			border-color: transparent transparent #fff transparent;
 			bottom: 100%;
+
 			@include center(h);
 		}
 	}
-	&.left{
+
+	&.left {
 		border-width: 11.5px 13px 11.5px 0;
 		margin-left: 18px;
 		top: 0;
 		right: 100%;
+
 		@include center(v);
-		&:before{
-			
-		}
 	}
-	&.right{
+
+	&.right {
 		top: 0;
 		left: 100%;
+
 		@include center(v);
-		&:before{
+		
+		&::before {
 			right: 100%;
+
 			@include center(v);
 		}
 	}
-	&.dark{
-		background-color: getColor(black);
+
+	&.dark {
+		background-color: get-color(black);
 		border:0;
-		&.bottom{
-			&:before{
-				border-color: transparent transparent getColor(black) transparent;				
+
+		&.bottom {
+			&::before {
+				border-color: transparent transparent get-color(black) transparent;				
 			}
 		}
 	}
-	p{
-		color: getColor(black);
+
+	p {
+		color: get-color(black);
 		font-size: ms(-2);
 		margin: 0;
 	}
-	&_header{
-		position: relative;
+
+	&_header {
 		padding-right: 20px;
+		position: relative;
 	}
-	&_close{
-		position: absolute;
-		top: 0;
-		right: 0;
+
+	&_close {
 		margin: 0 ;
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
-	&_checkbox{
+
+	&_checkbox {
 		display: none;
-		&:checked{
-			+ .tooltip{
+
+		&:checked {
+
+			+ .tooltip {
 				opacity: 1;
 			}
 		}
 	}
 }
-.tooltip-content{
+
+.tooltip-content {
 	// @include tooltip();
 	position: relative;
-	&:hover{
+
+	&:hover {
 		z-index: 2 !important;
-		.tooltip{
+
+		.tooltip {
 			opacity: 1;
 		}
 	}

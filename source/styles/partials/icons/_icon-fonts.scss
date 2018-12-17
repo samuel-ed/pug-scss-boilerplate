@@ -1,7 +1,7 @@
 /* =Icon Fonts
 ----------------------------------------------- */
 
-@mixin getFamilyIcon(){
+@mixin get-family-icon() {
   font-family: $iconFontName !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -13,9 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin getIcon($icon){
+@mixin get-icon($icon) {
   content: $icon;
-  @include getFamilyIcon(); 
+  @include get-family-icon(); 
 }
 
 @font-face {
@@ -27,16 +27,15 @@
     url("../fonts/#{$iconFontName}.svg#security") format("svg");
   font-weight: normal;
   font-style: normal;
-
 }
 
-[data-icon]:before {
-  @include getIcon(attr(data-icon));
+[data-icon]::before {
+  @include get-icon(attr(data-icon));
 }
 
-[class^="ic-"]:before,
-[class*=" ic-"]:before {
-  @include getFamilyIcon();   
+[class^="ic-"]::before,
+[class*=" ic-"]::before {
+  @include get-family-icon();   
 }
 
 .ic-airplane:before {

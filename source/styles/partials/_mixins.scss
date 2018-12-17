@@ -1,58 +1,63 @@
-@mixin font($fontName, $fontWeight, $size){
+@mixin font($fontName, $fontWeight, $size) {
 	$font-family: $fontWeight;
 	font-family: $fontName , Arial,"Helvetica Neue",Helvetica,sans-serif;
 	font-weight: $fontWeight;
-	@if $size != false{
+
+	@if $size != false {
 		font-size: $size;
 	}
 }
 
-@mixin elementTable($dir:top){
+@mixin element-table($dir:top) {
 	display: table;
 	// height: 100%;
 	width: 100%;
-	& &_content{
+
+	& &_content {
 		display: table-cell;
 		vertical-align: $dir;
 	}
 }
 
-@mixin setFullBlock(){
-	display: block;
-	position: absolute;
+@mixin set-full-block() {
 	bottom: 0;
+	display: block;
 	left: 0;
+	position: absolute;
 	right: 0;
 	top: 0;
 }
 
-@mixin expand($bgcolor, $dir:left){
+@mixin expand($bgcolor, $dir:left) {
 	position: relative;
-	&:before{
+
+	&:before {
 		background-color: $bgcolor;
+		bottom: 0;
 		content: "";
 		display: block;
 		height: 100%;
-		width: 500%;
-		position: absolute;
-		top: 0;
-		bottom: 0;
 		left: -100%;
+		position: absolute;
 		right: -100%;
-		@include mq($from: tablet ) {
-			@if($dir == left){
+		top: 0;
+		width: 500%;
+
+		@include mq($from: tablet) {
+			@if($dir == left) {
 				left: initial;
 				right: 100%;
 			}
-			@if($dir == right){
-				right: initial;
+
+			@if($dir == right) {
 				left: 100%;
+				right: initial;
 			}
 		}
 	}
 }
 
-@mixin circle($diameter:10px, $bgc:transparent){
+@mixin circle($diameter:10px, $bgc:transparent) {
 	background-color: $bgc;
 	border-radius: 50%;
 	display: block;
@@ -60,22 +65,24 @@
 	width: $diameter;
 }
 
-@mixin centerChild($tagChild){
+@mixin center-child($tagChild) {
 	position: relative;
+
 	#{$tagChild} {
 		@include center();
 		@content;
 	}
 }
 
-@mixin centerBlock() {
+@mixin center-block() {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-@mixin center($type:default){
+@mixin center($type:default) {
 	position: absolute;
+
 	@if $type == v {
 		top: 50%;
 		transform: translateY(-50%);
@@ -89,31 +96,32 @@
 	}
 }
 
-@mixin imgFluid(){
+@mixin img-fluid() {
 	display: block;
   height: auto;
   max-width: 100%;
 }
 
-@mixin imgResponsive(){
+@mixin img-responsive() {
 	display: block;
   height: auto;
   width: 100%;
 }
 
-@mixin pressButton($scale : .98){
+@mixin press-button($scale : .98) {
 	transition:.2s;
-	&:active{
+
+	&:active {
 		transform: scale($scale);
 	}
 }
 
-@mixin resetButton(){
+@mixin reset-button() {
 	appearance: none;
 	border: 0;
 }
 
-@mixin ellipsis ($max-width){
+@mixin ellipsis($max-width) {
   display: inline-block;
   max-width: $max-width;
   overflow: hidden;
@@ -133,30 +141,32 @@
 	}
 }
 
-@mixin clearSelect(){
+@mixin clear-select() {
 	appearance : none;
 	border:0;
 	background-color: transparent;
 }
 
-@mixin resetUl() {
+@mixin reset-ul() {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-@mixin clearfix ($haslayout : true) {
+@mixin clearfix($haslayout : true) {
 	zoom: 1;
+
 	&:before, &:after {
 		content: "";
 		display: table;
 	}
+
 	&:after {
 		clear: both
 	}
 }
 
-@mixin inlineBlock($val) {
+@mixin inline-block($val) {
 	display: inline-block;
 	vertical-align: $val;
 }

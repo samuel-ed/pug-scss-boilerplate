@@ -1,7 +1,7 @@
 //* =Functions
 //----------------------------------------------- */
 
-@function getColor($color) {
+@function get-color($color) {
 	@if map-has-key($colors, $color) {
 		$color: map-get($colors, $color);
 	} @else {
@@ -11,4 +11,15 @@
 	}
 
 	@return $color;
+}
+
+@function font($font) {
+	@if map-has-key($fonts, $font) {
+		$font: map-get($fonts, $font);
+	} @else {
+		@if type-of($font) != font {
+			@error "Font name: `#{$font}` not found."
+		}
+	}
+	@return $font;
 }

@@ -22,7 +22,7 @@ $buttonWidth: 102px;
 $buttonBgColor : #fff;
 $buttonBorder : none;
 $buttonBorderRadius : $buttonHeight/2;
-$buttonColor : getColor("graydark");
+$buttonColor : get-color("graydark");
 $buttonSize : ms(-1);
 $buttonWeight : 700;
 
@@ -31,7 +31,7 @@ $buttonWeight : 700;
 // 	&:before{
 // 		@include mq($from: tablet ) {
 // 			content: "";
-// 			background-color: getColor("blue");
+// 			background-color: get-color("blue");
 // 			position: absolute;
 // 			left: 0;
 // 			top: 0;
@@ -134,7 +134,7 @@ label{
 }
 
 .form{
-	background-color: getColor('blue');
+	background-color: get-color('blue');
 	padding: 44px 15px 52px;
 	margin-bottom: 20px;
 	margin-left: -15px;
@@ -149,7 +149,7 @@ label{
 		margin-bottom: 0;
 	}
 	&:before{
-		background-color: getColor('blue');
+		background-color: get-color('blue');
 		display: block;
 		position: absolute;
 		top: 0;

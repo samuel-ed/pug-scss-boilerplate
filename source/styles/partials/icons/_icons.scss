@@ -3,20 +3,23 @@
 
 // By SVG FILE
 
-@mixin svgIcon($name, $width, $height, $isBlock : false, $png: false){
+@mixin svg-icon($name, $width, $height, $isBlock : false, $png: false) {
   $url : $iconsPath + $name + ".svg";
-  @if ($png){
+  
+  @if ($png) {
     $url : $iconsPath + $name + ".png";
-  } 
-  @if($isBlock == true){
+  }
+
+  @if($isBlock == true) {
     display: block;
   }
+
   background-image: url($url);
-  width: $width + px;
   height: $height + px;
+  width: $width + px;
 }
 
-[class*="icon-"]{
+[class*="icon-"] {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -24,11 +27,11 @@
   vertical-align: middle;
 }
 
-.icon{
-  &--left{
+.icon {
+  &--left {
     margin-right: .6em;
   }
-  &--right{
+  &--right {
     margin-left: .6em;
   }
 }
@@ -47,45 +50,19 @@ $icons: (
 );
 
 @each $iconName, $icon in $icons {
-  .icon{
-    &-#{$iconName}{
-      @include svgIcon($iconName, map-get($icon, width), map-get($icon, height));
+  .icon {
+    &-#{$iconName} {
+      @include svg-icon($iconName, map-get($icon, width), map-get($icon, height));
     }
   }
 }
 
-
-.no-svg{
+.no-svg {
   @each $iconName, $icon in $icons {
-    .icon{
-      &-#{$iconName}{
-        @include svgIcon($iconName, map-get($icon, width), map-get($icon, height), true);
+    .icon {
+      &-#{$iconName} {
+        @include svg-icon($iconName, map-get($icon, width), map-get($icon, height), true);
       }
     }
   }
 }
-
-// By Fonts
-
-@mixin getIcon($icon){
-  content: $icon;
-  font-family: "gobcl" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-[class^="ic-"],
-[class*=" ic-"]{
-  display: inline-block;
-  vertical-align: middle;
-  &:before{
-    display: block;
-  }
-}
-

@@ -1,31 +1,33 @@
-/*
-	HEADER
-*/
-.site-header{
-	background-color: getColor("gray");
-	position: relative;
+/* =Header
+----------------------------------------------- */
+
+.site-header {
+	background-color: get-color("gray");
+	color: get-color("darkgray");
 	height: 65px;
-	color: getColor("darkgray");
-	@include mq($from: tablet) {
-	}
+	position: relative;
+
 	@include mq($from: desktop) {
 		height: 110px;
 	}
-	.site-logo{
+
+	.site-logo {
 		position: absolute;
-		z-index: 40;
 		width: 100px;
-		@include mq($from: desktop ) {
+		z-index: 40;
+
+		@include mq($from: desktop) {
 			width: 166px;
 		}
-		img{
+
+		img {
 			height: auto;
 			width: 100%;
 		}
 	}
 }
 
-.site-logo{
-	color: getColor("darkgray");
+.site-logo {
+	color: get-color("darkgray");
 	padding: 10px 0;
 }

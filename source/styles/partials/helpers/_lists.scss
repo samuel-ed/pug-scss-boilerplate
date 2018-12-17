@@ -1,40 +1,54 @@
+/* =Lists
+----------------------------------------------- */
+
 ul.disc {
-	padding-left: 25px;
 	list-style-type: disc;
-	li{
+	padding-left: 25px;
+
+	li {
 		list-style-type: disc;
 	}
 }
+
 ul.circle {
-	padding-left: 25px;
 	list-style-type: circle;
-	li{
+	padding-left: 25px;
+
+	li {
 		list-style-type: circle;
 	}
 }
+
 ul.square {
-	padding-left: 25px;
 	list-style-type: square;
-	li{
+	padding-left: 25px;
+
+	li {
 		list-style-type: square;
 	}
 }
+
 ol.upper-roman {
-	padding-left: 25px;
 	list-style-type: upper-roman;
+	padding-left: 25px;
+
 	li{
 		list-style-type: upper-roman;
 	}
 }
+
 ol.lower-alpha {
-	padding-left: 25px;
 	list-style-type: lower-alpha;
-	li{
+	padding-left: 25px;
+
+	li {
 		list-style-type: lower-alpha;
 	}
 }
-ul{
-	ul{
+
+ul {
+
+	ul {
 		padding-left: 2em;
 	}
 }

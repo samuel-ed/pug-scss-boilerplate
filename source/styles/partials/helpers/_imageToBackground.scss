@@ -2,39 +2,45 @@
  * Works with app.js 
  * Function: App.imageToBackground();
 ----------------------------------------------- */
-.imgToBg{
-	&_source{
+.imgToBg {
+
+	&_source {
 		display: none !important;
 	}
-	&_element{
+
+	&_element {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
+
 		@for $i from 1 to $grid-columns {
-			&--#{$i}{
+			&--#{$i} {
 				background-size: ($i*100%/$grid-columns);
 				background-position-x: left;
 			}
 		}
-		&--left{
+
+		&--left {
 			background-position-x: left;
 		}
-		&--right{
+		&--right {
 			background-position-x: right;
 		}
 	}
-	
 }
 
-.imgToBgExpand{
+.imgToBgExpand {
 	height: 100%;
-	@include mq($until: tablet ) {
+
+	@include mq($until: tablet) {
 		min-height: 300px;
 	}
-	&_source{
+
+	&_source {
 		display: none !important;
 	}
-	&_element{
+
+	&_element {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -42,10 +48,12 @@
 		height: 100%;
 		top: 0;
 		// z-index: -1;
-		&--left{
+		
+		&--left {
 			right: 0;
 		}
-		&--right{
+
+		&--right {
 			left: 0;
 		}
 	}

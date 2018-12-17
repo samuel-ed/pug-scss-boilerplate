@@ -1,15 +1,16 @@
 /* =Helpers - Full Height
 ----------------------------------------------- */
-.fullheight{
+
+.fullheight {
 	@each $bpName, $bp in $bootstrapBreakpoints {
 		&-#{$bpName} {
-			@if( $bpName == xs ){
-				@include mq($until: 768px ) {
+			@if($bpName == xs) {
+				@include mq($until: 768px) {
 					height: 100%;
 				}
 			}
-			@else{
-				@include mq($from: $bp ) {
+			@else {
+				@include mq($from: $bp) {
 					height: 100%;
 				}
 			}

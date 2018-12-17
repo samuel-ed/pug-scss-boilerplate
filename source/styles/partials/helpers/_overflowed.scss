@@ -2,16 +2,18 @@
  * Works with bootstrap's grid 
  * Overflowed the $grid-gutter-width/2
 ----------------------------------------------- */
+
 @each $bpName, $bp in $bootstrapBreakpoints {
 	.overflowed-#{$bpName} {
-		@if( $bpName == xs ){
+		@if($bpName == xs) {
 			@include mq($until: 768px ) {
 				margin-left: -15px !important;
 				margin-right: -15px !important;
 			}
 		}
-		@else{
-			@include mq($from: $bp ) {
+
+		@else {
+			@include mq($from: $bp) {
 				margin-left: -15px !important;
 				margin-right: -15px !important;
 			}
