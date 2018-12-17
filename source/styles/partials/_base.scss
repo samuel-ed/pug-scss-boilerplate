@@ -1,11 +1,3 @@
-@import 'normalize';
-
-/* =Base
------------------------------------------------ */
-*, *:after, *:before{
-	box-sizing: border-box;
-	
-}
 body {
 	color: getColor('primaryText');
 	font-family: $lato;
@@ -13,19 +5,6 @@ body {
 	line-height: 1.2;
 	font-weight: 400;
 	overflow-x: hidden;
-	/* WP */
-	&.admin-bar{
-		.site-header{
-			&_fixed{
-				margin-top: 32px;
-			}
-		}
-		.mfp-wrap,
-		.site-nav{
-			margin-top: 32px;
-		}
-	}
-/* End WP */
 }
 a{
 	color: #457EC0;

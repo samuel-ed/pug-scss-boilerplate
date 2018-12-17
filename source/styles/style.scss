@@ -6,32 +6,33 @@ Author URI: https://linkedin.com/in/samuel-ed
 */
 
 @import 
+  'partials/dev-libraries',
   'partials/mixins',
+  'partials/functions',
   'partials/settings',
   
-  "partials/google-fonts",
-  'partials/icon-fonts',
-  'partials/libraries',
+  'partials/bootstrap',
+  "partials/typography/google-fonts",
+  'partials/icons/icon-fonts',
   "partials/colors",
+  'partials/libraries',
   // 'partials/fonts',
 
   'partials/base',
-  'partials/typography',
-  'partials/icons',
+  'partials/icons/icons',
   'partials/helpers',
-
-  'partials/table-grid',
-  
-
+    
   // LAYOUT
-  'partials/header',
-  'partials/navigation',
-  'partials/footer',
+  'partials/layout/header',
+  'partials/layout/navigation',
+  'partials/layout/footer',
+  'partials/layout/table-grid',
   
-  
+  // Components
+  'partials/components/headings',
+  'partials/components/buttons'
   // 'partials/tabs',
   // 'partials/collapsible',
-  'partials/buttons'
   // 'partials/form',
   // 'partials/tooltip',
   // 'partials/sections'

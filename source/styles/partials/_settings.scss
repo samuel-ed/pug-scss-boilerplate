@@ -1,5 +1,5 @@
-/* =Settings
------------------------------------------------ */
+//* =Settings
+//----------------------------------------------- */
 
 // Assets
 $imagesPath : "../images/";
@@ -45,16 +45,3 @@ $colors:
 	"darkgray" : #636b6f,
 	"primaryText" : #636b6f
 );
-
-// get a color from the color map
-@function getColor($color) {
-	@if map-has-key($colors, $color) {
-		$color: map-get($colors, $color);
-	} @else {
-		@if type-of($color) != color {
-			@error "Color name: `#{$color}` not found."
-		}
-	}
-
-	@return $color;
-}
