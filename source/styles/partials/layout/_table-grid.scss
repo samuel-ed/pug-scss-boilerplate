@@ -1,36 +1,36 @@
 /* =Table Grid
 ----------------------------------------------- */
 
-@each $bpName, $bp in $bootstrapBreakpoints {
-	.table-#{$bpName}-row {
+@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+	.table-#{$breakpoint-name}-row {
 
-		@include mq($from: $bp) {
+		@include mq($from: $breakpoint) {
 			display: table;
 			table-layout: fixed;
 			width: 100%;
 		}
 
-		> [class*="col-#{$bpName}-"] {
-			@include mq($from: $bp) {
+		> [class*="col-#{$breakpoint-name}-"] {
+			@include mq($from: $breakpoint) {
 				display: table-cell;
 				float: none;
 				vertical-align: top;
 			}
 
 			&.top {
-				@include mq($from: $bp) {
+				@include mq($from: $breakpoint) {
 					vertical-align: top;
 				}
 			}
 
 			&.bottom {
-				@include mq($from: $bp) {
+				@include mq($from: $breakpoint) {
 					vertical-align: bottom;
 				}
 			}
 
 			&.middle {
-				@include mq($from: $bp) {
+				@include mq($from: $breakpoint) {
 					vertical-align: middle;
 				}
 			}
@@ -49,10 +49,10 @@
 		}
 	}
 
-	@each $bpName, $bp in $bootstrapBreakpoints {
-		&-#{$bpName}-block {
+	@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+		&-#{$breakpoint-name}-block {
 
-			@if($bpName == xs) {
+			@if($breakpoint-name == xs) {
 				@include mq($until: tablet) {
 					display: table;
 					height: 100%;
@@ -65,7 +65,7 @@
 			}
 
 			@else {
-				@include mq($from: $bp) {
+				@include mq($from: $breakpoint) {
 					display: table;
 					height: 100%;
 					width: 100%;
