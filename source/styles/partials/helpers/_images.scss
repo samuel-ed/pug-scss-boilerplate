@@ -1,12 +1,17 @@
-.img-responsive{
-	@include img-responsive();
+/* =Helpers - Images
+----------------------------------------------- */
+
+.img-responsive {
+	@include img-responsive;
 }
-.img-fluid{
-		@include img-fluid();
+
+.img-fluid {
+	@include img-fluid;
 }
-.img-fluid-overflowed{
-	@include img-fluid();	
-	@include mq($from: tablet ) {
+
+.img-fluid-overflowed {
+	@include img-fluid;
+	@include mq($from: tablet) {
 		max-width: none;
 	}
 }
