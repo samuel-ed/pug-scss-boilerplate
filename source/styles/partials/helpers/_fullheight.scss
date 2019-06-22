@@ -2,15 +2,15 @@
 ----------------------------------------------- */
 
 .fullheight {
-	@each $bpName, $bp in $bootstrapBreakpoints {
-		&-#{$bpName} {
-			@if($bpName == xs) {
+	@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+		&-#{$breakpoint-name} {
+			@if($breakpoint-name == xs) {
 				@include mq($until: 768px) {
 					height: 100%;
 				}
 			}
 			@else {
-				@include mq($from: $bp) {
+				@include mq($from: $breakpoint) {
 					height: 100%;
 				}
 			}

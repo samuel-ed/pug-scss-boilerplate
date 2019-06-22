@@ -11,10 +11,10 @@ $sides: (bottom, left, right, top);
 		}
 	}
 
-	@each $bpName, $bp in $bootstrapBreakpoints {
-		@if($bpName == xs) {
+	@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+		@if($breakpoint-name == xs) {
 			@each $side in $sides {
-				&-#{$bpName}-#{$side} {
+				&-#{$breakpoint-name}-#{$side} {
 					@include mq($until: 768px) {
 						#{$property}-#{$side}: 0 !important;
 					}
@@ -24,9 +24,9 @@ $sides: (bottom, left, right, top);
 
 		@else {
 			@each $side in $sides {
-				&-#{$bpName}-#{$side} {
+				&-#{$breakpoint-name}-#{$side} {
 
-					@include mq($from: $bp) {
+					@include mq($from: $breakpoint) {
 						#{$property}-#{$side}: 0 !important;
 					}
 				}

@@ -3,9 +3,9 @@
  * Overflowed the $grid-gutter-width/2
 ----------------------------------------------- */
 
-@each $bpName, $bp in $bootstrapBreakpoints {
-	.overflowed-#{$bpName} {
-		@if($bpName == xs) {
+@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+	.overflowed-#{$breakpoint-name} {
+		@if($breakpoint-name == xs) {
 			@include mq($until: 768px ) {
 				margin-left: -15px !important;
 				margin-right: -15px !important;
@@ -13,7 +13,7 @@
 		}
 
 		@else {
-			@include mq($from: $bp) {
+			@include mq($from: $breakpoint) {
 				margin-left: -15px !important;
 				margin-right: -15px !important;
 			}
