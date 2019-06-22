@@ -2,108 +2,40 @@
 ----------------------------------------------- */
 
 @mixin get-family-icon() {
-  font-family: $iconFontName !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: $icon-font-name !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 @mixin get-icon($icon) {
-  content: $icon;
-  @include get-family-icon(); 
+	@include get-family-icon();
+	content: $icon;
 }
 
 @font-face {
-  font-family: $iconFontName;
-  src:url('../fonts/#{$iconFontName}.eot');
-  src:url("../fonts/#{$iconFontName}.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/#{$iconFontName}.woff") format("woff"),
-    url("../fonts/#{$iconFontName}.ttf") format("truetype"),
-    url("../fonts/#{$iconFontName}.svg#security") format("svg");
-  font-weight: normal;
-  font-style: normal;
+	font-family: $icon-font-name;
+	src:url('#{$fonts-path + $icon-font-name}.eot');
+	src:url('#{$fonts-path + $icon-font-name}.eot?#iefix') format('embedded-opentype'),
+		url('#{$fonts-path + $icon-font-name}.woff') format('woff'),
+		url('#{$fonts-path + $icon-font-name}.ttf') format('truetype'),
+		url('#{$fonts-path + $icon-font-name}.svg#security') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 [data-icon]::before {
-  @include get-icon(attr(data-icon));
+	@include get-icon(attr(data-icon));
 }
 
-[class^="ic-"]::before,
-[class*=" ic-"]::before {
-  @include get-family-icon();   
+[class^='#{$icon-fonts-prefix}-']::before,
+[class*=' #{$icon-fonts-prefix}-']::before {
+	@include get-family-icon();
 }
 
-.ic-airplane:before {
-  content: "\72";
-}
-.ic-arrow-down:before {
-  content: "\76";
-}
-.ic-facebook:before {
-  content: "\77";
-}
-.ic-facebook-square:before {
-  content: "\78";
-}
-.ic-instagram:before {
-  content: "\79";
-}
-.ic-twitter:before {
-  content: "\7a";
-}
-.ic-twitter-square:before {
-  content: "\41";
-}
-.ic-close-bold:before {
-  content: "\42";
-}
-.ic-close:before {
-  content: "\43";
-}
-.ic-building:before {
-  content: "\44";
-}
-.ic-call:before {
-  content: "\45";
-}
-.ic-car:before {
-  content: "\46";
-}
-.ic-arrow-box-right:before {
-  content: "\47";
-}
-.ic-arrow-box-left:before {
-  content: "\48";
-}
-.ic-close-square:before {
-  content: "\49";
-}
-.ic-checked:before {
-  content: "\4a";
-}
-.ic-umbrella:before {
-  content: "\4b";
-}
-.ic-menu:before {
-  content: "\4c";
-}
-.ic-flag:before {
-  content: "\4d";
-}
-.ic-search:before {
-  content: "\4e";
-}
-.ic-boat:before {
-  content: "\4f";
-}
-.ic-wallet:before {
-  content: "\61";
-}
-.ic-plus:before {
-  content: "\62";
-}
+@import './_icon-fonts-classes';

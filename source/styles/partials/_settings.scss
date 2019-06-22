@@ -2,12 +2,15 @@
 //----------------------------------------------- */
 
 // Assets
-$imagesPath : "../images/";
-$iconsPath : "../images/icons/";
-$fontsPath  : "fonts/";
+$images-path : '../images/';
+$icons-path : '../images/icons/';
+$fonts-path : '../fonts/';
 
 //Icon Fonts
-$iconFontName  : "appfont";
+$icon-font-name  : 'appfont';
+$icon-fonts-prefix : 'ic';
+$icon-svg-prefix : 'icon';
+
 
 // Resposive breakpoints
 $mq-breakpoints: (
@@ -36,11 +39,11 @@ $modularscale: (
 
 // Color Map
 $colors: (
-	"black": #000,
-	"white": #fff,
-	"blue" : #0062AB,
-	"red" : #EA3B44,
-	"gray": rgb(250, 250, 250),
-	"darkgray" : #636b6f,
-	"primaryText" : #636b6f
+	'black': #000,
+	'white': #fff,
+	'blue' : #0062AB,
+	'red' : #EA3B44,
+	'gray': rgb(250, 250, 250),
+	'darkgray' : #636b6f,
+	'primaryText' : #636b6f
 );

@@ -3,14 +3,14 @@
 
 // By SVG FILE
 
-@mixin svg-icon($name, $width, $height, $isBlock : false, $png: false) {
-  $url : $iconsPath + $name + ".svg";
+@mixin svg-icon($name, $width, $height, $is-block : false, $png: false) {
+  $url : $icons-path + $name + '.svg';
   
   @if ($png) {
-    $url : $iconsPath + $name + ".png";
+    $url : $icons-path + $name + '.png';
   }
 
-  @if($isBlock == true) {
+  @if ($is-block) {
     display: block;
   }
 
@@ -19,7 +19,7 @@
   width: $width + px;
 }
 
-[class*="icon-"] {
+[class*='icon-'] {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -27,41 +27,25 @@
   vertical-align: middle;
 }
 
-.icon {
-  &--left {
-    margin-right: .6em;
-  }
-  &--right {
-    margin-left: .6em;
-  }
-}
-
 $icons: (
-	facebook: ( width  : 38, height : 38 ),
-  twitter: ( width  : 38, height : 38 ),
-  burger: ( width  : 15, height : 14 ),
-  close: ( width  : 32, height : 32 ),
-  down: ( width  : 11, height : 11 ),
-  up: ( width  : 11, height : 11 ),
-  back: ( width  : 16, height : 16 ),
-  flag: ( width  : 16, height : 16 ),
-  lock: ( width  : 16, height : 16 ),
-  wallet: ( width  : 20, height : 20 ),
+	facebook: ( width: 38, height: 38 ),
+  twitter: ( width: 38, height: 38 ),
+  instagram: ( width: 15, height: 14 ),
 );
 
-@each $iconName, $icon in $icons {
+@each $icon-name, $icon in $icons {
   .icon {
-    &-#{$iconName} {
-      @include svg-icon($iconName, map-get($icon, width), map-get($icon, height));
+    &-#{$icon-name} {
+      @include svg-icon($icon-name, map-get($icon, width), map-get($icon, height));
     }
   }
 }
 
 .no-svg {
-  @each $iconName, $icon in $icons {
+  @each $icon-name, $icon in $icons {
     .icon {
-      &-#{$iconName} {
-        @include svg-icon($iconName, map-get($icon, width), map-get($icon, height), true);
+      &-#{$icon-name} {
+        @include svg-icon($icon-name, map-get($icon, width), map-get($icon, height), true);
       }
     }
   }
