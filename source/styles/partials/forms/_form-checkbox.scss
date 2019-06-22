@@ -1,0 +1,114 @@
+/* =Form Checkbox
+----------------------------------------------- */
+
+.form-checkbox {
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 0 12px;
+	padding-left: 32px;
+	position: relative;
+	user-select: none;
+	white-space: normal;
+
+	input[type=checkbox] {
+		display: none;
+
+		&:checked {
+			
+			& + .form-checkbox_icon {
+				background-color: get-color('gray');
+				border: 0;
+
+				&::after {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&_icon {
+		@include square(16px);
+		border: 1px solid get-color('gray');
+		border-radius: 3px;
+		display: block;
+		float: left;
+		margin-left: -32px;
+		margin-top: 4px;
+		position: relative;
+
+		&::after {
+			@include square(16px);
+			background: url($icons-path + 'check.svg') no-repeat center center;
+			content: '';
+			display: none;
+			left: 0;
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	&_title {
+		color: get-color('gray');
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 20px;
+		vertical-align: middle;
+	}
+
+	&_range {
+		color: rgba(get-color('gray'), .5);
+		display: block;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+	}
+
+}
+
+.form-checkbox-single {
+	margin: 0;
+	padding-left: 0;
+
+	.form-checkbox_icon {
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 0;
+	}
+}
+
+.form-checkbox-block {
+	display: block;
+	width: 100%;
+}
+
+.form-checkbox-input {
+	align-items: center;
+	border: 1px solid get-color('gray');
+	border-radius: 2px;
+	display: flex;
+	min-height: 50px;
+	padding: 8px 14px;
+	width: 100%;
+
+	.form-checkbox {
+		margin: 0;
+	}
+}
+
+.form-checkbox-group {
+	margin: 0 0 22px;
+
+	&_title {
+		color: rgba(get-color('gray'), .5);
+		font-size: 13px;
+		font-weight: 500;
+		margin: 0 0 5px;
+		text-transform: uppercase;
+	}
+
+	.form-checkbox-input {
+		margin-top: -1px;
+	}
+}

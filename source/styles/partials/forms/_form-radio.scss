@@ -1,0 +1,41 @@
+/* =Form Radio
+----------------------------------------------- */
+
+.form-radio {
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 0 14px;
+	padding-left: 30px;
+	position: relative;
+	user-select: none;
+	white-space: normal;
+
+	input[type=radio] {
+		display: none;
+
+		&:checked {
+
+			& + .form-radio_icon {
+				border-width: 5px;
+			}
+		}
+	}
+
+	&_label {
+		color: get-color('gray');
+    font-size: 14px;
+    font-weight: 500;
+		line-height: 23px;
+		letter-spacing: .2px;
+	}
+
+	&_icon {
+		@include circle(16px);
+		border: 1px solid get-color('gray');
+		display: block;
+		float: left;
+		margin-left: -30px;
+		margin-top: 4px;
+		position: relative;
+	}
+}

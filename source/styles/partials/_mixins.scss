@@ -50,6 +50,12 @@
 	}
 }
 
+@mixin square($diameter:10px){
+	display: block;
+	height: $diameter; 
+	width: $diameter;
+}
+
 @mixin circle($diameter:10px, $background-color:transparent) {
 	background-color: $background-color;
 	border-radius: 50%;
