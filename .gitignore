@@ -6,3 +6,5 @@ dist/
 .DS_Store
 .tmp/
 *.css
+yarn.lock
+.sass-lint.yml
