@@ -1,25 +1,33 @@
+/* =Base
+----------------------------------------------- */
+
 body {
-	color: get-color('primaryText');
+	color: get-color('primary-text');
 	font-family: $lato;
 	font-size: 16px;
-	line-height: 1.2;
 	font-weight: 400;
+	line-height: 1.2;
 	overflow-x: hidden;
 }
-a{
+
+a {
 	color: #457EC0;
 }
+
 b,
 strong {
   font-weight: bold;
 }
-figure{
+
+figure {
 	margin: 0;
 }
-blockquote{
+
+blockquote {
 	margin: 0;
 }
-hr{
+
+hr {
 	background-color: #D8D8D8;
 	border: 0;
 	height: 1px;
