@@ -2,26 +2,24 @@
 ----------------------------------------------- */
 
 .navigation {
-	background-color: rgba(get-color('gray'),.9);
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
+	background-color: rgba(get-color('gray'), .9);
 	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
 	text-align: right;
-	// display: none;
+	top: 0;
+	transform: scale(0);
 	transform-origin: top right;
-	transform: scale( 0 );
 	transition: all .2s ease-out;
 	z-index: 30;
 
 	@include mq($from: desktop) {
-		// display: block;
 		background-color: transparent;
+		float: right;
 		position: relative;
 		top: 0;
-		float: right;
-		transform: scale( 1 );
+		transform: scale(1);
 	}
 
 	&_content {
@@ -31,15 +29,47 @@
 		}
 	}
 
+	&_list {
+		@include reset-ul;
+		text-align: center;
+
+		@include mq($from: desktop) {
+			text-align: right;
+		}
+	}
+
+	&_item {
+		margin-bottom: 20px;
+
+		@include mq($from: desktop) {
+			display: inline-block;
+			margin-bottom: 0;
+
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+	}
+
+	&_link {
+		color: get-color('blue');
+		font-weight: 400;
+		text-decoration: underline;
+		@include mq($until: tablet) {
+			font-size: ms(0);
+		}
+	}
+
 	&_top {
 		@include mq($from: desktop) {
+			margin-bottom: 0;
 			padding: 20px 0 15px;
 		}
 
 		li {
 			a {
 				@include mq($from: desktop) {
-					font-size: 12px;	
+					font-size: 12px;
 					font-size: ms(-2);
 				}
 			}
@@ -48,6 +78,7 @@
 
 	&_bottom {
 		@include mq($from: desktop) {
+			margin-bottom: 0;
 			padding: 15px 0;
 		}
 
@@ -55,146 +86,6 @@
 			a {
 				font-size: ms(0);
 			}
-		}
-	}
-
-	ul {
-		text-align: center;
-
-		@include mq($from: desktop) {
-			text-align: right;
-		}
-
-		li {
-			margin-bottom: 20px;
-
-			@include mq($from: desktop) {
-				display: inline-block;
-				margin-bottom: 0;
-
-				&:not(:last-child) {
-					margin-right: 20px;
-				}
-			}
-
-			a {
-				color: get-color("darkgray");
-
-				@include mq($until: tablet) {
-					font-size: ms(2);
-				}
-			}
-		}
-	}
-}
-/* Menu Trigger Hamburger */
-.menu-trigger {
-	border: none;
-	background: none;
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	cursor: pointer;
-	display: block;
-	margin: 0;
-	z-index: 40;
-	transition: all .2s;
-
-	@include mq($from: desktop) {
-		display: none;
-	}
-
-	span {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		height: 4px;
-		margin-top: -2px;
-		background-color: get-color("darkgray");
-		border-radius: 5px;
-
-		&:after,
-		&:before {
-			content: "";
-			position: absolute;
-			top: -10px;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: get-color("darkgray");
-			border-radius: 5px;
-			transition: all .2s;
-		}
-
-		&::before {
-			top: 10px;
-		}
-	}
-
-	/* Close */
-	&::after,
-	&::before {
-		display: none;
-		content: "";
-		position: absolute;
-		top: -5px;
-		left: 14px;
-		width: 5px;
-		height: 38px;
-		background-color: get-color("darkgray");
-		border-radius: 5px;
-		transform: rotate(45deg);
-		transition: all .2s;
-	}
-
-	&::before {
-		transform: rotate(-45deg);
-	}
-
-	&:active {
-		span {
-			&::after {
-				top: -12px;
-			}
-
-			&::before {
-				top: 12px;
-			}
-		}
-	}
-}
-
-.menu-trigger-input {
-	display: none;
-
-	&:checked {
-		~ .navigation {
-		//  display: block;
-			transform: scale(1);
-		}
-
-		~ .menu-trigger {
-			position: fixed;
-
-			span {
-				display: none;
-			}
-
-			&:after,
-			&:before {
-				display: block;
-			}
-
-			&:active {
-				transform: rotate(90deg) scale(.9);
-			}
-		}
-
-		~ .site-logo {
-			position: fixed;
 		}
 	}
 }

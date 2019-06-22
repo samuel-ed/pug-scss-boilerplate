@@ -1,0 +1,113 @@
+/* =Menu Trigger
+----------------------------------------------- */
+
+.menu-trigger {
+	border: none;
+	background: none;
+	cursor: pointer;
+	display: block;
+	height: 25px;
+	margin: 0;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	transition: all .2s;
+	width: 25px;
+	z-index: 40;
+
+	@include mq($from: desktop) {
+		display: none;
+	}
+
+	span {
+		background-color: get-color('darkgray');
+		border-radius: 5px;
+		height: 4px;
+		left: 0;
+		margin-top: -2px;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+
+		&::after,
+		&::before {
+			background-color: get-color('darkgray');
+			border-radius: 5px;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: -10px;
+			transition: all .2s;
+			width: 100%;
+		}
+
+		&::before {
+			top: 10px;
+		}
+	}
+
+	/* Close */
+	&::after,
+	&::before {
+		background-color: get-color('darkgray');
+		border-radius: 5px;
+		content: '';
+		display: none;
+		height: 38px;
+		left: 14px;
+		position: absolute;
+		top: -5px;
+		transform: rotate(45deg);
+		transition: all .2s;
+		width: 5px;
+	}
+
+	&::before {
+		transform: rotate(-45deg);
+	}
+
+	&:active {
+		span {
+			&::after {
+				top: -12px;
+			}
+
+			&::before {
+				top: 12px;
+			}
+		}
+	}
+}
+
+.menu-trigger-input {
+	display: none;
+
+	&:checked {
+		~ .navigation {
+		//  display: block;
+			transform: scale(1);
+		}
+
+		~ .menu-trigger {
+			position: fixed;
+
+			span {
+				display: none;
+			}
+
+			&:after,
+			&:before {
+				display: block;
+			}
+
+			&:active {
+				transform: rotate(90deg) scale(.9);
+			}
+		}
+
+		~ .site-logo {
+			position: fixed;
+		}
+	}
+}
