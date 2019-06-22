@@ -25,7 +25,7 @@
 	&_content {
 		@include mq($until: desktop) {
 			@include center(v);
-			width: 100%;	
+			width: 100%;
 		}
 	}
 
