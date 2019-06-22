@@ -2,12 +2,12 @@
 ----------------------------------------------- */
 
 // color classes
-@each $colorName, $color in $colors {
-	.text-#{$colorName} {
+@each $color-name, $color in $colors {
+	.text-#{$color-name} {
 		color: $color !important;
 	}
 
-	.bg-#{$colorName} {
+	.bg-#{$color-name} {
 		background-color: $color !important;
 		&.expand-left{
 			@include expand($color, left);
@@ -17,7 +17,7 @@
 		}
 	}
 
-	.border-#{$colorName} {
+	.border-#{$color-name} {
 		border-color: $color !important;
 	}
 }
