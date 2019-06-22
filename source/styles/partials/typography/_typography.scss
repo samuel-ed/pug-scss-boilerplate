@@ -16,7 +16,7 @@ $fonts: (
 	wl: $whitney-light
 );
 
-@each $fontKey, $font in $fonts {
+@each $key, $font in $fonts {
   @font-face {
 		font-family: $font;
 		src: url($fonts-path + $font +'.eot');
