@@ -11,7 +11,6 @@ $icon-font-name  : 'appfont';
 $icon-fonts-prefix : 'ic';
 $icon-svg-prefix : 'icon';
 
-
 // Resposive breakpoints
 $mq-breakpoints: (
 	mobile:  320px,
@@ -20,21 +19,22 @@ $mq-breakpoints: (
 	tablet:  768px,
 	desktop: 992px,
 	wide:    1200px,
-	xwide: 	 1440px,
+	xwide:   1440px,
 	fullhd:  1600px,
 );
 
-$bootstrapBreakpoints: (
+$bootstrap-breakpoints: (
 	xs: 0px,
-	sm: 768px,
-	md: 992px,
-	lg: 1200px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
 );
 
 // Font Size
 $modularscale: (
-  base: 1em,
-  ratio: 1.125
+	base: 1em,
+	ratio: 1.125
 );
 
 // Color Map
@@ -45,5 +45,5 @@ $colors: (
 	'red' : #EA3B44,
 	'gray': rgb(250, 250, 250),
 	'darkgray' : #636b6f,
-	'primaryText' : #636b6f
+	'primary-text' : #636b6f
 );
