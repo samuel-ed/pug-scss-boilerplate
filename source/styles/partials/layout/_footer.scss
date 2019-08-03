@@ -2,34 +2,34 @@
 ----------------------------------------------- */
 
 .site-footer {
-  background-color: get-color("gray");
-  padding: 40px 0;
-  display: block;
-  overflow: hidden;
-  width: 100%;
+	background-color: get-color("gray");
+	padding: 40px 0;
+	display: block;
+	overflow: hidden;
+	width: 100%;
 
-  .site-logo {
-    margin: 0 0 20px;
-    display: block;
-  }
+	.site-logo {
+		margin: 0 0 20px;
+		display: block;
+	}
 
-  .social {
-    text-align: center;
+	.social {
+		text-align: center;
 
-    @include mq($from: desktop) {
-      text-align: right;
-    }
+		@include mq($from: desktop) {
+			text-align: right;
+		}
 
-    li {
-      display: inline-block;
-    }
-  }
+		li {
+			display: inline-block;
+		}
+	}
 
-  ul {
-    li {
-      a {
-        color: get-color("darkgray");
-      }
-    }
-  }
+	ul {
+		li {
+			a {
+				color: get-color("darkgray");
+			}
+		}
+	}
 }

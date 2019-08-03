@@ -4,49 +4,49 @@
 // By SVG FILE
 
 @mixin svg-icon($name, $width, $height, $is-block : false, $png: false) {
-  $url : $icons-path + $name + '.svg';
-  
-  @if ($png) {
-    $url : $icons-path + $name + '.png';
-  }
+	$url : $icons-path + $name + '.svg';
+	
+	@if ($png) {
+		$url : $icons-path + $name + '.png';
+	}
 
-  @if ($is-block) {
-    display: block;
-  }
+	@if ($is-block) {
+		display: block;
+	}
 
-  background-image: url($url);
-  height: $height + px;
-  width: $width + px;
+	background-image: url($url);
+	height: $height + px;
+	width: $width + px;
 }
 
 [class*='icon-'] {
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  vertical-align: middle;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 $icons: (
 	facebook: ( width: 38, height: 38 ),
-  twitter: ( width: 38, height: 38 ),
-  instagram: ( width: 15, height: 14 ),
+	twitter: ( width: 38, height: 38 ),
+	instagram: ( width: 15, height: 14 ),
 );
 
 @each $icon-name, $icon in $icons {
-  .icon {
-    &-#{$icon-name} {
-      @include svg-icon($icon-name, map-get($icon, width), map-get($icon, height));
-    }
-  }
+	.icon {
+		&-#{$icon-name} {
+			@include svg-icon($icon-name, map-get($icon, width), map-get($icon, height));
+		}
+	}
 }
 
 .no-svg {
-  @each $icon-name, $icon in $icons {
-    .icon {
-      &-#{$icon-name} {
-        @include svg-icon($icon-name, map-get($icon, width), map-get($icon, height), true);
-      }
-    }
-  }
+	@each $icon-name, $icon in $icons {
+		.icon {
+			&-#{$icon-name} {
+				@include svg-icon($icon-name, map-get($icon, width), map-get($icon, height), true);
+			}
+		}
+	}
 }

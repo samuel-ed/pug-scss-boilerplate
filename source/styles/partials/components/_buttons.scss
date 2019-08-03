@@ -2,31 +2,31 @@
 ----------------------------------------------- */
 
 .button {
-  // background-color: get-color('white');
-  // color: get-color('graydark');
-  font-size: ms(-1);
-  font-weight: 700;
-  display: inline-block;
-  margin: ms(1) 0;
-  padding: 9px 26px;
-  height: 38px;
+	// background-color: get-color('white');
+	// color: get-color('graydark');
+	font-size: ms(-1);
+	font-weight: 700;
+	display: inline-block;
+	margin: ms(1) 0;
+	padding: 9px 26px;
+	height: 38px;
 
-  &--rounded {
-    border-radius: 20px;
-  }
+	&--rounded {
+		border-radius: 20px;
+	}
 
-  @include press-button();
+	@include press-button();
 }
 
 .link {
-  // color: get-color("bluelight");
-  display: inline-block;
-  font-size: ms(-1);
-  font-weight: 700;
-  text-decoration: none;
-  white-space: normal;
+	// color: get-color("bluelight");
+	display: inline-block;
+	font-size: ms(-1);
+	font-weight: 700;
+	text-decoration: none;
+	white-space: normal;
 
-  &--underlined{
-    text-decoration: underline;
-  }
+	&--underlined{
+		text-decoration: underline;
+	}
 }
