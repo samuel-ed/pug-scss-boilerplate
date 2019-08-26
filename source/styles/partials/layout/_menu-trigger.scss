@@ -96,8 +96,8 @@
 				display: none;
 			}
 
-			&:after,
-			&:before {
+			&::after,
+			&::before {
 				display: block;
 			}
 

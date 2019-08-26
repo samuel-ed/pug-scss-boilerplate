@@ -2,8 +2,8 @@
 ----------------------------------------------- */
 
 .site-header {
-	background-color: get-color("gray");
-	color: get-color("darkgray");
+	background-color: get-color('gray');
+	color: get-color('darkgray');
 	height: 65px;
 	position: relative;
 
@@ -28,6 +28,6 @@
 }
 
 .site-logo {
-	color: get-color("darkgray");
+	color: get-color('darkgray');
 	padding: 10px 0;
 }

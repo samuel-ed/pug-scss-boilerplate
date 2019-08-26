@@ -1,1 +1,1 @@
-// @codekit-prepend quiet "../../bower_components/jquery/dist/jquery.slim.min.js";
+// @codekit-prepend quiet "../../node_modules/jquery/dist/jquery.slim.min.js";

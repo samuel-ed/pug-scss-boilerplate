@@ -23,6 +23,7 @@
 	}
 
 	&_content {
+
 		@include mq($until: desktop) {
 			@include center(v);
 			width: 100%;
@@ -55,12 +56,14 @@
 		color: get-color('blue');
 		font-weight: 400;
 		text-decoration: underline;
+
 		@include mq($until: tablet) {
 			font-size: ms(0);
 		}
 	}
 
 	&_top {
+
 		@include mq($from: desktop) {
 			margin-bottom: 0;
 			padding: 20px 0 15px;
@@ -68,6 +71,7 @@
 
 		li {
 			a {
+
 				@include mq($from: desktop) {
 					font-size: 12px;
 					font-size: ms(-2);
@@ -77,6 +81,7 @@
 	}
 
 	&_bottom {
+
 		@include mq($from: desktop) {
 			margin-bottom: 0;
 			padding: 15px 0;
