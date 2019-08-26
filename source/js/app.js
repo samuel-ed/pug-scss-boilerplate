@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var App = {};
 
 $(function() {
@@ -6,38 +6,39 @@ $(function() {
 });
 
 App = {
-	init : function(){
+	init: function() {
 		this.imageToBackground();
 		this.imageToBackgroundExpand();
-		// this.carousel();
-		// this.tabs();
-		this.bannersCarusel();
 	},
-	menuTrigger: function(){
-		$('.menu-trigger').on('click', function(e){
+
+	menuTrigger: function() {
+		$('.menu-trigger').on('click', function(e) {
 			e.preventDefault();
-			$('body').toggleClass("menu-active");	
+			$('body').toggleClass('menu-active');
 		});
 	},
-	imageToBackground : function(){
+
+	imageToBackground: function() {
 		$('.imgToBg_element').each(function(index, el) {
 			var srcImg = $(el).find('.imgToBg_source').attr('src');
 			$(el).css('background-image','url('+ srcImg +')');
 		});
 	},
-	imageToBackgroundExpand : function(){
+
+	imageToBackgroundExpand: function() {
 		var This = this;
 		$('.imgToBgExpand').each(function(index, el) {
 			var $bg = $(el).find('.imgToBgExpand_element'),
 					srcImg = String($(el).find('.imgToBgExpand_source').attr('src'));
-			$bg.css({"background-image": "url("+ srcImg +")"});
+			$bg.css({'background-image': 'url('+ srcImg +')'});
 			This.setElementWidth(el);
 			This.onResize(function(){
 				This.setElementWidth(el);
 			});
 		});
 	},
-	setElementWidth : function(el){
+
+	setElementWidth: function(el) {
 		var $bg = $(el).find('.imgToBgExpand_element'),
 				container = $('.container').outerWidth(),
 				windowWidth = $(window).outerWidth(),
@@ -56,53 +57,27 @@ App = {
 				$bg.css({'margin-left': 0, 'width': widthBg});
 		}
 	},
-	onResize : function(callback){
-		$(window).on('resize', function(){
+
+	onResize: function(callback) {
+		$(window).on('resize', function() {
 			callback();
 		});
 	},
-	isDesktop : function(){
+
+	isDesktop: function() {
 		return ($(window).outerWidth() >= 768)? true : false;
 	},
-	goTo: function(){
+
+	goTo: function() {
 		$('.goTo').each(function(index, el) {
 			var anchor = $(el).attr('href');
 			var pos = $(anchor).offset().top - 64;
 			$(el).click(function() {
-					$('html, body').animate({
-							scrollTop: pos
-					}, 500);
+				$('html, body').animate({
+					scrollTop: pos
+				}, 500);
 			});
 		});
 	},
 
-	//------------------
-	bannersCarusel : function () {
-		$('.banners').slick({
-			dots: true,
-		  infinite: true,
-		  speed: 300,
-		  slidesToShow: 3,
-			slidesToScroll: 3,
-		  responsive: [
-				{
-					breakpoint: 768,
-					settings: {
-						arrows: false,
-						centerMode: true,
-						centerPadding: '40px',
-						slidesToShow: 2
-					}
-				},
-				{
-					breakpoint: 767,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						arrows: false,
-					}
-				},
-			]
-		});
-	},
 };
