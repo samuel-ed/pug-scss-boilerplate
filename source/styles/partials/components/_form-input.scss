@@ -1,0 +1,61 @@
+/* =Form Input
+----------------------------------------------- */
+
+.form-input {
+	appearance: none;
+	background-color: transparent;
+	background-color: $input-background-color;
+	border: $input-border;
+	border-radius: $input-border-radius;
+	color: $input-color;
+	font-size: $input-size;
+	font-weight: $input-weight;
+	line-height: 1.3;
+	height: $input-height;
+	padding: 13px 16px;
+	letter-spacing: .2px;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+
+	@include placeholder(color('blue'));
+
+	&:focus {
+		outline: none;
+		border-color: color('blue');
+	}
+
+	&:disabled {
+		opacity: 0.25;
+
+		& ~ .form-label {
+			opacity: 0.25;
+		}
+	}
+}
+
+select {
+	cursor: pointer;
+
+	&.form-input {
+		background-image: url($svg-path + 'select.svg');
+		background-position: calc(100% - .75rem) center;
+		background-repeat: no-repeat;
+		padding-right: 32px;
+	}
+}
+
+textarea {
+	&.form-input {
+		min-height: 173px;
+	}
+}
+
+.form-label {
+	color: $label-color;
+	font-size: $label-size;
+	font-weight: $label-weight;
+	letter-spacing: .2px;
+	padding: 0;
+	margin: 0 0 8px;
+}

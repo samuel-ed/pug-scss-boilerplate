@@ -2,18 +2,19 @@
 ----------------------------------------------- */
 
 // Label
-$label-color: rgba(get-color('gray'), .5);
+$label-color: rgba(color('gray'), .5);
 $label-size: 16px;
 $label-weight : 500;
 
 // Input
-$input-background-color : get-color('white');
-$input-border : 1px solid get-color('gray');
+$input-background-color : color('white');
+$input-border : 1px solid color('gray');
 $input-border-radius : 0;
-$input-color : get-color('gray');
-$input-color-focus : get-color('black');
+$input-color : color('gray');
+$input-color-focus : color('black');
 $input-height : 50px;
 $input-size: 16px;
+$input-weight: 400;
 
 @import './form-field';
 @import './form-input';

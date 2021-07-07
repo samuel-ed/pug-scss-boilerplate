@@ -22,7 +22,7 @@
 	}
 
 	&_label {
-		color: get-color('gray');
+		color: color('gray');
     font-size: 14px;
     font-weight: 500;
 		line-height: 23px;
@@ -31,7 +31,7 @@
 
 	&_icon {
 		@include circle(16px);
-		border: 1px solid get-color('gray');
+		border: 1px solid color('gray');
 		display: block;
 		float: left;
 		margin-left: -30px;

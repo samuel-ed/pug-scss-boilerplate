@@ -2,23 +2,26 @@
 ----------------------------------------------- */
 
 .collapsible {
+	@include reset-ul;
 
 	&_item {
-		border-bottom: 1px solid get-color('darkgray');
+		border-bottom: 1px solid #667B9B;
 
 		&.active {
 
 			.collapsible {
 
 				&_header {
-					background-color: get-color('white');
-					border-bottom-color: get-color('darkgray');
-					color: get-color(black);
 					user-select: none;
 
 					&::after {
-						transform: rotate(-180deg);
+						transform: rotate(90deg);
 					}
+				}
+
+				&_title {
+					font-size: 24px;
+					font-weight: 600;
 				}
 
 				// &_body {}
@@ -27,51 +30,156 @@
 	}
 
 	&_header {
-		background-color: get-color('white');
+		// background-color: color('white');
 		border-bottom: 1px solid transparent;
-		color: get-color('black');
+		color: color('blue');
 		cursor: pointer;
-		padding: 18px 13px;
-		padding-right: 67px;
+		padding: 5px 0;
+		padding-right: 40px;
 		position: relative;
 		transition: all .35s;
 
 		&::after {
 			@include center(v);
 
-			background-image: url($icons-path + 'arrow-select.svg');
+			background-image: url($svg-path + 'collapsible-arrow.svg');
 			background-repeat: no-repeat;
 			content: '';
-			height: 6px;
+			height: 12px;
 			margin-right: 13px;
 			right: 0;
-			width: 9px;
+			width: 10px;
 
-			@include mq($from: tablet) {
-				margin-right: 20px;
+			@include media-breakpoint-up(md) {
+				margin-right: 15px;
 			}
 		}
 	}
 
 	&_title {
 		color: inherit;
-		font-size: ms(0);
-		font-weight: 500;
-		line-height: 24px;
+		font-size: 16px;
+		font-weight: 400;
 		margin: 0;
-		text-decoration: underline;
+		transition: .2s;
 		user-select: none;
 	}
 
 	&_body {
 		display: none;
+		font-size: 16px;
+		line-height: 28px;
 		margin-top: -2px;
-		padding: 8px 11px;
+		padding: 10px 0;
 		
 		p {
 			&:last-child {
 				margin-bottom: 0;
 			}
+		}
+	}
+}
+
+.collapsible-faq {
+
+	&_item {
+		margin: 0 0 6px;
+
+		&[open] {
+			.collapsible-faq_header {
+				&::after {
+					transform: rotate(90deg) translateX(-50%);
+				}
+			}
+		}
+	}
+
+	&_header {
+		background: color('salmon-300');
+		border-radius: 6px;
+		color: color('blue');
+		cursor: pointer;
+		font-size: 16px;
+		padding: 8px 15px;
+		user-select: none;
+		list-style: none;
+		background-image:none;
+		-webkit-appearance:none;
+		position: relative;
+		transform-origin: center;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:marker {
+			appearance:none;
+			background-image:none;
+			display: none;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			background: url($svg-path + 'collapsible-faq-arrow.svg') no-repeat;
+			width: 9px;
+			height: 12px;
+			@include center(v);
+			right: 0;
+			transition: .2s;
+			margin-right: 13px;
+		}
+	}
+}
+
+details summary::marker {
+  display:none;
+}
+
+.collapsible-question {
+	&_item {
+		margin: 0 0 6px;
+
+		&[open] {
+			.collapsible-question_header {
+				&::after {
+					content: "-";
+				}
+			}
+		}
+	}
+
+	&_header {
+		
+		color: color('blue');
+		cursor: pointer;
+		font-size: 16px;
+		padding: 0 0 0 15px;
+		user-select: none;
+		list-style: none;
+		background-image:none;
+		-webkit-appearance:none;
+		position: relative;
+		transform-origin: center;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:marker {
+			appearance:none;
+			background-image:none;
+			display: none;
+		}
+
+		&::after {
+			content: "+";
+			color: color('salmon');
+			display: block;
+			@include center(v);
+			left: 0;
+			transition: .2s;
+			margin-right: 13px;
 		}
 	}
 }

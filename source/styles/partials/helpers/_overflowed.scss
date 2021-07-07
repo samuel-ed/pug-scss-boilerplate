@@ -3,17 +3,17 @@
  * Overflowed the $grid-gutter-width/2
 ----------------------------------------------- */
 
-@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+@each $breakpoint-name, $breakpoint in $grid-breakpoints {
 	.overflowed-#{$breakpoint-name} {
 		@if($breakpoint-name == xs) {
-			@include mq($until: 768px ) {
+			@include media-breakpoint-down(sm) {
 				margin-left: -15px !important;
 				margin-right: -15px !important;
 			}
 		}
 
 		@else {
-			@include mq($from: $breakpoint) {
+			@include media-breakpoint-up( $breakpoint-name ) {
 				margin-left: -15px !important;
 				margin-right: -15px !important;
 			}

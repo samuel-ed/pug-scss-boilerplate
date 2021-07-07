@@ -12,29 +12,24 @@ Author URI: https://linkedin.com/in/samuel-ed
 	'partials/settings',
 	
 	'partials/bootstrap',
-	"partials/typography/google-fonts",
-	'partials/icons/icon-fonts',
+	// "partials/typography/google-fonts",
 	"partials/colors",
 	'partials/libraries',
-	// 'partials/fonts',
-
 	'partials/base',
-	'partials/icons/icons',
 	'partials/helpers',
-		
-	// Layout
-	'partials/layout/header',
-	'partials/layout/navigation',
-	'partials/layout/menu-trigger',
-	'partials/layout/footer',
-	'partials/layout/table-grid',
-
-	// Form
-	'partials/forms/forms',
-
+	
 	// Components
+	// 'partials/components/icons',
+	'partials/components/icon-fonts',
+	'partials/components/fonts',
+	'partials/components/header',
+	'partials/components/navigation',
+	'partials/components/menu-trigger',
+	'partials/components/footer',
+	'partials/components/forms',
 	'partials/components/headings',
-	'partials/components/buttons'
+	'partials/components/buttons',
+	'partials/components/table-grid'
 	// 'partials/tabs',
 	// 'partials/collapsible',
 	// 'partials/form',

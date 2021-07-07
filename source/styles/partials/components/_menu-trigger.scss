@@ -1,0 +1,94 @@
+/* =Menu Trigger
+----------------------------------------------- */
+
+.menu-trigger {
+	@include reset-button;
+	background: none;
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	outline: 0;
+	transition: all .2s;
+	padding: 15px;
+	touch-action: none;
+	z-index: 40;
+	user-select: none;
+
+	span {
+		background-color: color('white');
+		display: block;
+		border-radius: 2px;
+		height: 2px;
+		transition: .3s;
+		width: 22px;
+
+		&:first-child {
+			transform-origin: left top;
+		}
+
+		&:last-child {
+			transform-origin: left bottom;
+		}
+
+		&:nth-child(2) {
+			margin: 6px 0;
+		}
+	}
+}
+
+.menu-trigger-input {
+	display: none;
+}
+
+body.menuIsOpen {
+
+	@include media-breakpoint-down(md) {
+		overflow: hidden;
+
+		.site-header_fixed {
+			height: 100%;
+
+			&::after {
+				transform: translateY(0);
+			}
+
+			.navigation {
+				// position: relative;
+				transform: translateY(0);
+			}
+
+			.navigation-main {
+				.search-button {
+					color: color('white');
+					-webkit-filter: none;
+					filter: none;
+				}
+			}
+		
+
+			.menu-trigger {
+				// position: fixed;
+
+				span {
+					background: color('white');
+
+					&:first-child {
+						transform: rotate(48deg);
+					}
+
+					&:last-child {
+						transform: rotate(-48deg);
+					}
+
+					&:nth-child(2) {
+						opacity: 0;
+					}
+				}
+			}
+
+			.site-logo {
+				opacity: 0;
+			}
+		}
+	}
+}

@@ -36,7 +36,7 @@
 		top: 0;
 		width: 500%;
 
-		@include mq($from: $breakpoint) {
+		@include media-breakpoint-up($breakpoint) {
 			@if($direction == left) {
 				left: initial;
 				right: 100%;
@@ -105,6 +105,18 @@
 	display: block;
 	height: auto;
 	width: 100%;
+}
+
+@mixin img-cover($absolute : false) {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+
+	@if($absolute) {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
 }
 
 @mixin press-button($scale : .98) {

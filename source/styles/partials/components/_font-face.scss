@@ -1,0 +1,31 @@
+//* =Font Faces
+//----------------------------------------------- */
+@use "sass:map";
+
+@mixin font-face($font-family, $file-name, $font-path, $font-weight: normal, $font-style: normal) {
+	@font-face {
+		font-family: $font-family;
+		src: url($font-path + $file-name +'.eot');
+		src: url($font-path + $file-name +'.eot?#iefix') format('embedded-opentype'),
+				url($font-path + $file-name +'.woff') format('woff'),
+				url($font-path + $file-name +'.ttf') format('truetype'),
+				url($font-path + $file-name +'.svg#' + $file-name) format('svg');
+		font-weight: $font-weight;
+		font-style: $font-style;
+		font-display: swap;
+	}
+}
+
+@each $font-family in $font-faces {
+	$prefix-name: map.get($font-family, 'prefixName');
+	$font-name: map.get($font-family, 'fontFamily');
+	$font-path: $fonts-path;
+	$weights : map.get($font-family, 'fonts');
+
+	@each $font in $weights {
+		$file-name: $prefix-name + map.get($font, 'name');
+		$font-weight: map.get($font, 'weight');
+		$font-style: map.get($font, 'style');
+		@include font-face($font-name, $file-name, $font-path, $font-weight, $font-style);
+	}
+}

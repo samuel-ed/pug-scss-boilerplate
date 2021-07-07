@@ -2,31 +2,9 @@
  * Works with app.js 
  * Function: App.imageToBackground();
 ----------------------------------------------- */
-.imgToBg {
+.expanded-element {
 
-	&_source {
-		display: none !important;
-	}
-
-	&_element {
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
-
-		@for $i from 1 to $grid-columns {
-			&--#{$i} {
-				background-size: ($i*100%/$grid-columns);
-				background-position-x: left;
-			}
-		}
-
-		&--left {
-			background-position-x: left;
-		}
-		&--right {
-			background-position-x: right;
-		}
-	}
+	
 }
 
 .imgToBgExpand {

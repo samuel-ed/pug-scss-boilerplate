@@ -1,7 +1,7 @@
 //* =Functions
 //----------------------------------------------- */
 
-@function get-color($color) {
+@function color($color) {
 	@if map-has-key($colors, $color) {
 		$color: map-get($colors, $color);
 	} @else {

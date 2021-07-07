@@ -1,36 +1,36 @@
 /* =Table Grid
 ----------------------------------------------- */
 
-@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+@each $breakpoint-name, $breakpoint in $grid-breakpoints {
 	.table-#{$breakpoint-name}-row {
 
-		@include mq($from: $breakpoint) {
+		@include media-breakpoint-up( $breakpoint-name) {
 			display: table;
 			table-layout: fixed;
 			width: 100%;
 		}
 
 		> [class*='col-#{$breakpoint-name}-'] {
-			@include mq($from: $breakpoint) {
+			@include media-breakpoint-up( $breakpoint-name) {
 				display: table-cell;
 				float: none;
 				vertical-align: top;
 			}
 
 			&.top {
-				@include mq($from: $breakpoint) {
+				@include media-breakpoint-up( $breakpoint-name) {
 					vertical-align: top;
 				}
 			}
 
 			&.bottom {
-				@include mq($from: $breakpoint) {
+				@include media-breakpoint-up( $breakpoint-name) {
 					vertical-align: bottom;
 				}
 			}
 
 			&.middle {
-				@include mq($from: $breakpoint) {
+				@include media-breakpoint-up( $breakpoint-name) {
 					vertical-align: middle;
 				}
 			}
@@ -50,11 +50,11 @@
 		}
 	}
 
-	@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+	@each $breakpoint-name, $breakpoint in $grid-breakpoints {
 		&-#{$breakpoint-name}-block {
 
 			@if($breakpoint-name == xs) {
-				@include mq($until: tablet) {
+				@include media-breakpoint-down(md) {
 					display: table;
 					height: 100%;
 					width: 100%;
@@ -66,7 +66,7 @@
 			}
 
 			@else {
-				@include mq($from: $breakpoint) {
+				@include media-breakpoint-up( $breakpoint-name) {
 					display: table;
 					height: 100%;
 					width: 100%;

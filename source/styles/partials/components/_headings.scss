@@ -1,22 +1,77 @@
 /* =Headings
 ----------------------------------------------- */
 
-h1, .title-s1 { font-size: ms(5); }
-h2, .title-s2 { font-size: ms(4); }
-h3, .title-s3 { font-size: ms(3); }
-h4, .title-s4 { font-size: ms(2); }
-h5, .title-s5 { font-size: ms(1); }
-h6, .title-s6 { font-size: ms(0); }
+.text-1 {
+	font-size: rem(48px);
+}
 
-// text styling helper classes
-.italic    { font-style: italic !important; }
-.xlight    { font-weight: 200 !important; }
-.light     { font-weight: 300 !important; }
-.regular   { font-weight: 400 !important; }
-.semibold  { font-weight: 500 !important; }
-.bold      { font-weight: 600 !important; }
-.xbold     { font-weight: 700 !important; }
-.defaultcase { text-transform: none !important; }
-.uppercase { text-transform: uppercase !important; }
-.lowercase { text-transform: lowercase !important; }
-.underline { text-decoration: underline !important; }
+.text-2 {
+	font-size: rem(36px);
+}
+
+.text-3 {
+	font-size: rem(28px);
+}
+
+.text-4 {
+	font-size: rem(24px);
+}
+
+.text-5 {
+	font-size: rem(21px);
+}
+
+.text-6 {
+	font-size: rem(18px);
+}
+
+.title-1 {
+	@extend .text-1;
+	color: color('blue');
+	font-weight: 700;
+	line-height: 1.1;
+	margin: rem(0 0 32px);
+}
+
+.title-2 {
+	@extend .text-2;
+	color: color('blue');
+	font-weight: 600;
+	line-height: 1;
+}
+
+.title-3 {
+	@extend .text-3;
+	color: color('blue');
+	font-weight: 600;
+	font-weight: 700;
+	line-height: 34px;
+	margin: 0 0 rem(32px);
+}
+
+.title-4 {
+	@extend .text-4;
+	color: color('blue');
+	font-weight: 600;
+	line-height: 1;
+}
+
+.title-5 {
+	@extend .text-5;
+	color: color('blue');
+	font-weight: 400;
+	line-height: 1;
+}
+
+.title-6  {
+	@extend .text-6;
+	color: color('blue');
+	font-weight: 400;
+}
+
+.title-7 {
+	@extend .text-4;
+	color: color('blue');
+	font-weight: 500;
+	line-height: rem(40.8px);
+}

@@ -11,11 +11,11 @@ $sides: (bottom, left, right, top);
 		}
 	}
 
-	@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+	@each $breakpoint-name, $breakpoint in $grid-breakpoints {
 		@if($breakpoint-name == xs) {
 			@each $side in $sides {
 				&-#{$breakpoint-name}-#{$side} {
-					@include mq($until: 768px) {
+					@include media-breakpoint-down(md) {
 						#{$property}-#{$side}: 0 !important;
 					}
 				}
@@ -26,7 +26,7 @@ $sides: (bottom, left, right, top);
 			@each $side in $sides {
 				&-#{$breakpoint-name}-#{$side} {
 
-					@include mq($from: $breakpoint) {
+					@include media-breakpoint-up( $breakpoint-name) {
 						#{$property}-#{$side}: 0 !important;
 					}
 				}
@@ -54,4 +54,44 @@ $sides: (bottom, left, right, top);
 	margin: 0 !important;
 
 	@include breakpointProperty(margin);
+}
+
+.border-radius-20 {
+	border-radius: 20px;
+}
+
+.border-top-20 {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.border-theme {
+	border-radius: 20px;
+}
+
+.border-theme-bottom {
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.border-theme-left {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.border-theme-right {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.border-theme-top {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.margin-overflowed-mobile {
+	@include media-breakpoint-down(md) {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 }

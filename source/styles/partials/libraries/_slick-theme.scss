@@ -160,12 +160,12 @@ $slick-opacity-not-active: 0.25 !default;
 
 		li {
 			button {
-				background: rgba(get-color('blue'), .59);
+				background: rgba(color('blue'), .59);
 			}
 
 			&.slick-active {
 				button {
-					background-color: get-color('blue');
+					background-color: color('blue');
 				}
 			}
 		}
@@ -174,15 +174,15 @@ $slick-opacity-not-active: 0.25 !default;
 	.slick-prev {
 		left: 32px;
 
-		@include mq($from: tablet) {
+		@include media-breakpoint-up(md) {
 			left: -20px;
 		}
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			left: -23px;
 		}
 
-		@include mq($from: wide) {
+		@include media-breakpoint-up(xl) {
 			left: -42px;
 		}
 
@@ -194,15 +194,15 @@ $slick-opacity-not-active: 0.25 !default;
 	.slick-next {
 		right: 32px;
 
-		@include mq($from: tablet) {
+		@include media-breakpoint-up(md) {
 			right: -20px;
 		}
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			right: -23px;
 		}
 
-		@include mq($from: wide) {
+		@include media-breakpoint-up(xl) {
 			right: -42px;
 		}
 

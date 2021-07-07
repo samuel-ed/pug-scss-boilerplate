@@ -43,14 +43,14 @@
 	}
 
 	&.success {
-		box-shadow: 0px 0px 0px 3px get-color('success');
+		box-shadow: 0px 0px 0px 3px color('success');
 
 		&::after {
 			background-image: url($icons-path + 'icon-success.png');
 		}
 	}
 	&.error {
-		box-shadow: 0px 0px 0px 3px get-color('error');
+		box-shadow: 0px 0px 0px 3px color('error');
 
 		&::after {
 			background-image: url($icons-path + 'icon-error.png');

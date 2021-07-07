@@ -5,13 +5,72 @@
 // $grid-gutter-width:         30px;
 // $container-large-desktop:(1140px + $grid-gutter-width);
 
-// BASE
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px
+// );
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+// 	xl: 1140px,
+// 	xxl: 1270px
+// );
+
+// Primary Colors
+$black: #000000;
+$white: #FFFFFF;
+$gray: rgb(250, 250, 250);
+$inherit: inherit;
+
+// Secondary Colors
+$blue-light: #B3BDCD;
+$blue-light-100: #E5E9EE;
+
+// Alert Colors
+$green: #01A93F;
+$red: #ED2338;
+$yellow: #F7C600;
+
+
+// $primary:       $salmon;
+// $secondary:     $blue;
+$success:       $green;
+$warning:       $yellow;
+$danger:        $red;
+
 
 @import '../../../node_modules/bootstrap/scss/functions';
 @import '../../../node_modules/bootstrap/scss/variables';
+
+$colors: (
+  "white":   $white,
+  "black":   $black,
+  "gray":    $gray,
+  "green":   $green,
+  "red":     $red,
+  "yellow":  $yellow,
+  "inherit": inherit,
+);
+
+$theme-colors: (
+  // 'primary':   $primary,
+  // 'secondary': $secondary,
+  'success':   $success,
+  'warning':   $warning,
+  'danger':    $danger,
+);
+
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/reboot';
 @import '../../../node_modules/bootstrap/scss/grid';
 @import '../../../node_modules/bootstrap/scss/utilities';
+// @import '../../../node_modules/bootstrap/scss/alert';
+// @import '../../../node_modules/bootstrap/scss/dropdown'
 
 // END BASE

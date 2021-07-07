@@ -16,7 +16,7 @@
 		&:checked {
 			
 			& + .form-checkbox_icon {
-				background-color: get-color('gray');
+				background-color: color('gray');
 				border: 0;
 
 				&::after {
@@ -28,7 +28,7 @@
 
 	&_icon {
 		@include square(16px);
-		border: 1px solid get-color('gray');
+		border: 1px solid color('gray');
 		border-radius: 3px;
 		display: block;
 		float: left;
@@ -48,7 +48,7 @@
 	}
 
 	&_title {
-		color: get-color('gray');
+		color: color('gray');
 		display: inline-block;
 		font-size: 16px;
 		font-weight: 700;
@@ -57,7 +57,7 @@
 	}
 
 	&_range {
-		color: rgba(get-color('gray'), .5);
+		color: rgba(color('gray'), .5);
 		display: block;
 		font-size: 16px;
 		font-weight: 400;
@@ -85,7 +85,7 @@
 
 .form-checkbox-input {
 	align-items: center;
-	border: 1px solid get-color('gray');
+	border: 1px solid color('gray');
 	border-radius: 2px;
 	display: flex;
 	min-height: 50px;
@@ -101,7 +101,7 @@
 	margin: 0 0 22px;
 
 	&_title {
-		color: rgba(get-color('gray'), .5);
+		color: rgba(color('gray'), .5);
 		font-size: 13px;
 		font-weight: 500;
 		margin: 0 0 5px;

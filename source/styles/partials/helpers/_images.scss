@@ -11,7 +11,7 @@
 
 .img-fluid-overflowed {
 	@include img-fluid;
-	@include mq($from: tablet) {
+	@include media-breakpoint-up(md) {
 		max-width: none;
 	}
 }

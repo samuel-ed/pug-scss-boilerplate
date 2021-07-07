@@ -1,0 +1,21 @@
+/* =Font Size
+----------------------------------------------- */
+
+
+@each $font-size-name, $font-size in $font-sizes {
+	.text-#{$font-size-name} {
+		font-size: $font-size !important;
+	}
+}
+
+@function font-size($font-size) {
+	@if map-has-key($font-sizes, $font-size) {
+		$font-size: map-get($font-sizes, $font-size);
+	} @else {
+		@if type-of($font-size) != color {
+			@error "Font family name: `#{$font-size}` not found."
+		}
+	}
+
+	@return $font-size;
+}

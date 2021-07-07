@@ -2,12 +2,12 @@
 ----------------------------------------------- */
 
 .site-header {
-	background-color: get-color('gray');
-	color: get-color('darkgray');
+	background-color: color('gray');
+	color: color('darkgray');
 	height: 65px;
 	position: relative;
 
-	@include mq($from: desktop) {
+	@include media-breakpoint-up(lg) {
 		height: 110px;
 	}
 
@@ -16,7 +16,7 @@
 		width: 100px;
 		z-index: 40;
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			width: 166px;
 		}
 
@@ -28,6 +28,6 @@
 }
 
 .site-logo {
-	color: get-color('darkgray');
+	color: color('darkgray');
 	padding: 10px 0;
 }

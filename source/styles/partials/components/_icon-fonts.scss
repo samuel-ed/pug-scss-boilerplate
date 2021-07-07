@@ -33,9 +33,13 @@
 	@include get-icon(attr(data-icon));
 }
 
-[class^='#{$icon-fonts-prefix}-']::before,
-[class*=' #{$icon-fonts-prefix}-']::before {
-	@include get-family-icon();
+[class^='#{$icon-fonts-prefix}']::before,
+[class*=' #{$icon-fonts-prefix}']::before {
+	display: inline-flex;
+
+	&::before {
+		@include get-family-icon();
+	}
 }
 
 @import './_icon-fonts-classes';

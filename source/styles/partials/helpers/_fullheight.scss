@@ -2,15 +2,15 @@
 ----------------------------------------------- */
 
 .fullheight {
-	@each $breakpoint-name, $breakpoint in $bootstrap-breakpoints {
+	@each $breakpoint-name, $breakpoint in $grid-breakpoints {
 		&-#{$breakpoint-name} {
 			@if($breakpoint-name == xs) {
-				@include mq($until: 768px) {
+				@include media-breakpoint-up(md) {
 					height: 100%;
 				}
 			}
 			@else {
-				@include mq($from: $breakpoint) {
+				@include media-breakpoint-up( $breakpoint-name) {
 					height: 100%;
 				}
 			}

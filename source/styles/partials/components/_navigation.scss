@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 .navigation {
-	background-color: rgba(get-color('gray'), .9);
+	background-color: rgba(color('gray'), .9);
 	bottom: 0;
 	left: 0;
 	position: fixed;
@@ -14,7 +14,7 @@
 	transition: all .2s ease-out;
 	z-index: 30;
 
-	@include mq($from: desktop) {
+	@include media-breakpoint-up(lg) {
 		background-color: transparent;
 		float: right;
 		position: relative;
@@ -24,7 +24,7 @@
 
 	&_content {
 
-		@include mq($until: desktop) {
+		@include media-breakpoint-down(lg) {
 			@include center(v);
 			width: 100%;
 		}
@@ -34,7 +34,7 @@
 		@include reset-ul;
 		text-align: center;
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			text-align: right;
 		}
 	}
@@ -42,7 +42,7 @@
 	&_item {
 		margin-bottom: 20px;
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			display: inline-block;
 			margin-bottom: 0;
 
@@ -53,18 +53,18 @@
 	}
 
 	&_link {
-		color: get-color('blue');
+		color: color('blue');
 		font-weight: 400;
 		text-decoration: underline;
 
-		@include mq($until: tablet) {
-			font-size: ms(0);
+		@include media-breakpoint-down(md) {
+			font-size: rem(16px);
 		}
 	}
 
 	&_top {
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			margin-bottom: 0;
 			padding: 20px 0 15px;
 		}
@@ -72,9 +72,8 @@
 		li {
 			a {
 
-				@include mq($from: desktop) {
-					font-size: 12px;
-					font-size: ms(-2);
+				@include media-breakpoint-up(lg) {
+					font-size: rem(12px);
 				}
 			}
 		}
@@ -82,14 +81,14 @@
 
 	&_bottom {
 
-		@include mq($from: desktop) {
+		@include media-breakpoint-up(lg) {
 			margin-bottom: 0;
 			padding: 15px 0;
 		}
 
 		li {
 			a {
-				font-size: ms(0);
+				font-size: rem(14px);
 			}
 		}
 	}
